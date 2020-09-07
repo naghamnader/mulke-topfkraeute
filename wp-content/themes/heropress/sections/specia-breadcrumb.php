@@ -1,4 +1,4 @@
-<section class="breadcrumb hero" style="background: url('<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/images/breadcrumb.jpg') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);">
+<section class="breadcrumb hero" style="background: url('http://localhost:8888/mulke-topfkraeute/wp-content/uploads/2020/09/bg-mulke.jpg') no-repeat fixed 0 0 / cover rgba(0, 0, 0, 0);">
     <div class="background-overlay">
         <div class="container">
             <div class="row padding-top-100 padding-bottom-150">
