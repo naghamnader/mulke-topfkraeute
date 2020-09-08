@@ -37,7 +37,8 @@
 				</div>
 
 				<div class="col-md-6">
-					<?php 
+				Impressum
+					<!-- <?php 
 						$specia_icon_one	= get_theme_mod('icon_one',''); 
 						$specia_icon_two	= get_theme_mod('icon_two',''); 
 						$specia_icon_three	= get_theme_mod('icon_three',''); 
@@ -67,7 +68,7 @@
 								<li><a href="<?php echo esc_url($specia_icon_five); ?>"><i class="fa fa-cc-stripe"></i></a></li>
 							<?php } ?>
 						</ul>
-					<?php } ?>
+					<?php } ?> -->
 				</div>
 			</div>
 		</div>
