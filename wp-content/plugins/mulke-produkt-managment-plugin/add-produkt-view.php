@@ -46,25 +46,25 @@
       <div class="col-md-4">
       <div class="checkbox">
         <label for="checkboxes-0">
-          <input type="checkbox" name="checkboxes" id="checkboxes-sonnig" value="1">
+          <input type="checkbox" name="checkboxes-sonnig" id="checkboxes-sonnig" value="1">
           sonnig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-1">
-          <input type="checkbox" name="checkboxes" id="checkboxes-vollsonnig" value="2">
+          <input type="checkbox" name="checkboxes-vollsonnig" id="checkboxes-vollsonnig" value="2">
           vollsonnig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-2">
-          <input type="checkbox" name="checkboxes" id="checkboxes-halbschattig" value="3">
+          <input type="checkbox" name="checkboxes-halbschattig" id="checkboxes-halbschattig" value="3">
           halbschattig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-3">
-          <input type="checkbox" name="checkboxes" id="checkboxes-schattig" value="4">
+          <input type="checkbox" name="checkboxes-schattig" id="checkboxes-schattig" value="4">
           schattig
         </label>
       </div>
@@ -77,43 +77,43 @@
       <div class="col-md-4">
       <div class="radio">
         <label for="wasserVerbrauch-0">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-mittel" value="1" checked="checked">
+          <input type="radio" name="wasserVerbrauch-mittel" id="wasserVerbrauch-mittel" value="1" checked="checked">
           mittel
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-1">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-maeßigFeucht" value="2">
+          <input type="radio" name="wasserVerbrauch-maeßigFeucht" id="wasserVerbrauch-maeßigFeucht" value="2">
           mäßig feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-2">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-feucht" value="3">
+          <input type="radio" name="wasserVerbrauch-feucht" id="wasserVerbrauch-feucht" value="3">
           feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-3">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-leichtFeucht" value="4">
+          <input type="radio" name="wasserVerbrauch-leichtFeucht" id="wasserVerbrauch-leichtFeucht" value="4">
           leicht feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-4">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-maeßig" value="5">
+          <input type="radio" name="wasserVerbrauch-maeßig" id="wasserVerbrauch-maeßig" value="5">
           mäßig
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-5">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-maeßig trocken" value="6">
+          <input type="radio" name="wasserVerbrauch-maeßigTrocken" id="wasserVerbrauch-maeßigTrocken" value="6">
           mäßig trocken
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-6">
-          <input type="radio" name="wasserVerbrauch" id="wasserVerbrauch-trocken" value="7">
+          <input type="radio" name="wasserVerbrauch-trocken" id="wasserVerbrauch-trocken" value="7">
           trocken
         </label>
       </div>
@@ -146,11 +146,11 @@
       </div>
     </div>
     <!-- Button -->
-    <div class="form-group">
-        <button id="singlebutton" name="singlebutton" class="btn btn-primary" >Add produkt</button>
-    </div>
+
     
     </fieldset>
+    <input class="btn btn-primary" type="submit" value="Submit">
+
     </form>
 </body>
 </html>
