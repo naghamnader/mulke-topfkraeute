@@ -29,7 +29,7 @@
  * Ersetze datenbankname_hier_einfuegen
  * mit dem Namen der Datenbank, die du verwenden möchtest.
  */
-define( 'DB_NAME', 'mulke-topfkraeuter' );
+define( 'DB_NAME', 'mulke_topfkraeuter' );
 
 /**
  * Ersetze benutzername_hier_einfuegen
@@ -102,7 +102,8 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', false );
+define( 'WP_DEBUG', true );
+define( 'WP_DEBUG_LOG', true );
 
 /* Das war’s, Schluss mit dem Bearbeiten! Viel Spaß. */
 /* That's all, stop editing! Happy publishing. */
