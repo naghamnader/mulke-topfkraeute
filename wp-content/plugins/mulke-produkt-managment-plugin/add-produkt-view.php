@@ -147,6 +147,15 @@ else {
     </div>
     
     <!-- Text input-->
+     <div class="form-group">
+        <label class="col-md-4 control-label" for="produktBildUrl">Produkt-Bild-Url</label>  
+      <div class="col-md-4">
+        <input id="produktBild" name="produktBild" type="text" placeholder="Produkt-Bild" class="form-control input-md" >
+        
+      </div>
+    </div>
+
+    <!-- Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="produktVerwendung">Produkt-Verwendung</label>  
       <div class="col-md-4">
