@@ -1,3 +1,29 @@
+<?php
+if(isset($_POST)){
+  //data posted , save it to the database
+  //display message etc
+  foreach ($_POST as $key => $value) {
+    echo "<p>";
+    echo $key;
+    echo "   ";
+    echo $value;
+    echo "</p>";
+}
+  if( isset($_POST['submit']) )
+{
+  if (isset($_POST['produktName']) && !empty($_POST['produktName'])) {
+    echo $_POST['produktName'];
+}
+else {
+    echo 'Please ensure you have entered your details';
+}
+  echo "blabla2";
+}
+
+}
+
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -24,8 +50,8 @@
 
 </head>
 <body>
-  <form 
-  class="form-horizontal" >
+<form action="<?php the_permalink(); ?>" method='POST' class="form-horizontal" >
+
     <fieldset>
     
     <!-- Form Name -->
@@ -77,43 +103,43 @@
       <div class="col-md-4">
       <div class="radio">
         <label for="wasserVerbrauch-0">
-          <input type="radio" name="wasserVerbrauch-mittel" id="wasserVerbrauch-mittel" value="1" checked="checked">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-mittel" value="1">
           mittel
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-1">
-          <input type="radio" name="wasserVerbrauch-maeßigFeucht" id="wasserVerbrauch-maeßigFeucht" value="2">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßigFeucht" value="2">
           mäßig feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-2">
-          <input type="radio" name="wasserVerbrauch-feucht" id="wasserVerbrauch-feucht" value="3">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-feucht" value="3">
           feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-3">
-          <input type="radio" name="wasserVerbrauch-leichtFeucht" id="wasserVerbrauch-leichtFeucht" value="4">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-leichtFeucht" value="4">
           leicht feucht
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-4">
-          <input type="radio" name="wasserVerbrauch-maeßig" id="wasserVerbrauch-maeßig" value="5">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßig" value="5">
           mäßig
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-5">
-          <input type="radio" name="wasserVerbrauch-maeßigTrocken" id="wasserVerbrauch-maeßigTrocken" value="6">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßigTrocken" value="6">
           mäßig trocken
         </label>
       </div>
       <div class="radio">
         <label for="wasserVerbrauch-6">
-          <input type="radio" name="wasserVerbrauch-trocken" id="wasserVerbrauch-trocken" value="7">
+          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-trocken" value="7">
           trocken
         </label>
       </div>
@@ -145,11 +171,11 @@
         
       </div>
     </div>
-    <!-- Button -->
+    <!-- Submit Button -->
+    <input class="btn btn-primary" type="submit" name = "submit"  value="submit">
 
     
     </fieldset>
-    <input class="btn btn-primary" type="submit" value="Submit">
 
     </form>
 </body>
