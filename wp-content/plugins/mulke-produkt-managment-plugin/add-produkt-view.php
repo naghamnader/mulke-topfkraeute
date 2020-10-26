@@ -11,8 +11,8 @@ if(isset($_POST)){
 }
   if( isset($_POST['submit']) )
 {
-  if (isset($_POST['produktName']) && !empty($_POST['produktName'])) {
-    echo $_POST['produktName'];
+  if (isset($_POST['product_name']) && !empty($_POST['product_name'])) {
+    echo $_POST['product_name'];
 }
 else {
     echo 'Please ensure you have entered your details';
@@ -59,38 +59,38 @@ else {
     
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="produktName">Produkt Name</label>  
+      <label class="col-md-4 control-label" for="product_name">Produkt Name</label>  
       <div class="col-md-4">
-      <input id="produktName" name="produktName" type="text" placeholder="Produkt-Name" class="form-control input-md" required="">
+      <input id="product_name" name="product_name" type="text" placeholder="Produkt Name" class="form-control input-md" required="">
         
       </div>
     </div>
     
     <!-- Multiple Checkboxes -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="checkboxes">Produkt-Standort</label>
+      <label class="col-md-4 control-label" for="checkboxes">Produkt Standort</label>
       <div class="col-md-4">
       <div class="checkbox">
         <label for="checkboxes-0">
-          <input type="checkbox" name="checkboxes-sonnig" id="checkboxes-sonnig" value="1">
+          <input type="checkbox" name="checkboxes_location_sonnig" id="checkboxes_location_sonnig" value="1">
           sonnig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-1">
-          <input type="checkbox" name="checkboxes-vollsonnig" id="checkboxes-vollsonnig" value="2">
+          <input type="checkbox" name="checkboxes_location_vollsonnig" id="checkboxes_location_vollsonnig" value="2">
           vollsonnig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-2">
-          <input type="checkbox" name="checkboxes-halbschattig" id="checkboxes-halbschattig" value="3">
+          <input type="checkbox" name="checkboxes_location_halbschattig" id="checkboxes_location_halbschattig" value="3">
           halbschattig
         </label>
       </div>
       <div class="checkbox">
         <label for="checkboxes-3">
-          <input type="checkbox" name="checkboxes-schattig" id="checkboxes-schattig" value="4">
+          <input type="checkbox" name="checkboxes_location_schattig" id="checkboxes_location_schattig" value="4">
           schattig
         </label>
       </div>
@@ -99,47 +99,47 @@ else {
     
     <!-- Multiple Radios -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="wasserVerbrauch">Wasser-Verbrauch</label>
+      <label class="col-md-4 control-label" for="water_consumption">Wasser Verbrauch</label>
       <div class="col-md-4">
       <div class="radio">
-        <label for="wasserVerbrauch-0">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-mittel" value="1">
+        <label for="water_consumption_0">
+          <input type="radio" name="water_consumption" id="water_consumption_mittel" value="1">
           mittel
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-1">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßigFeucht" value="2">
+        <label for="water_consumption_1">
+          <input type="radio" name="water_consumption" id="water_consumption_maeßigFeucht" value="2">
           mäßig feucht
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-2">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-feucht" value="3">
+        <label for="water_consumption_2">
+          <input type="radio" name="water_consumption" id="water_consumption_feucht" value="3">
           feucht
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-3">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-leichtFeucht" value="4">
+        <label for="water_consumption_3">
+          <input type="radio" name="water_consumption" id="water_consumption_leichtFeucht" value="4">
           leicht feucht
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-4">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßig" value="5">
+        <label for="water_consumption_4">
+          <input type="radio" name="water_consumption" id="water_consumption_maeßig" value="5">
           mäßig
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-5">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-maeßigTrocken" value="6">
+        <label for="water_consumption_5">
+          <input type="radio" name="water_consumption" id="water_consumption_maeßigTrocken" value="6">
           mäßig trocken
         </label>
       </div>
       <div class="radio">
-        <label for="wasserVerbrauch-6">
-          <input type="radio" name="Wasser-Verbrauch" id="wasserVerbrauch-trocken" value="7">
+        <label for="water_consumption_6">
+          <input type="radio" name="water_consumption" id="water_consumption_trocken" value="7">
           trocken
         </label>
       </div>
@@ -148,35 +148,35 @@ else {
     
     <!-- Text input-->
      <div class="form-group">
-        <label class="col-md-4 control-label" for="produktBildUrl">Produkt-Bild-Url</label>  
+        <label class="col-md-4 control-label" for="product_img">Produkt Bild Url</label>  
       <div class="col-md-4">
-        <input id="produktBild" name="produktBild" type="text" placeholder="Produkt-Bild" class="form-control input-md" >
+        <input id="product_img" name="product_img" type="text" placeholder="Produkt Bild Url" class="form-control input-md" >
         
       </div>
     </div>
 
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="produktVerwendung">Produkt-Verwendung</label>  
+      <label class="col-md-4 control-label" for="product_usage">Produkt Verwendung</label>  
       <div class="col-md-4">
-      <input id="produktVerwendung" name="produktVerwendung" type="text" placeholder="Produkt-Verwendung" class="form-control input-md">
+      <input id="product_usage" name="product_usage" type="text" placeholder="Produkt Verwendung" class="form-control input-md">
         
       </div>
     </div>
     
     <!-- Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="produktPrise">Produkt-Prise</label>  
+      <label class="col-md-4 control-label" for="product_price">Produkt Prise</label>  
       <div class="col-md-4">
-      <input id="produktPrise" name="produktPrise" type="text" placeholder="Produkt-Prise" class="form-control input-md" onkeypress="return isNumberKey(event)" >
+      <input id="product_price" name="product_price" type="text" placeholder="Produkt Prise" class="form-control input-md" onkeypress="return isNumberKey(event)" >
         
       </div>
     </div>
      <!-- Text input-->
      <div class="form-group">
-      <label class="col-md-4 control-label" for="produktAvilableAmount">Verfügbare Menge</label>  
+      <label class="col-md-4 control-label" for="available_quantity">Verfügbare Menge</label>  
       <div class="col-md-4">
-      <input id="produktAvilableAmount" name="produktAvilableAmount" onkeypress="return isNumberKey(event)" placeholder="Verfügbare Menge" class="form-control input-md">
+      <input id="available_quantity" name="available_quantity" onkeypress="return isNumberKey(event)" placeholder="Verfügbare Menge" class="form-control input-md">
         
       </div>
     </div>
