@@ -1,28 +1,51 @@
 <?php
-if(isset($_POST)){
-  //data posted , save it to the database
-  //display message etc
-  foreach ($_POST as $key => $value) {
-    echo "<p>";
-    echo $key;
-    echo "   ";
-    echo $value;
-    echo "</p>";
-}
-  if( isset($_POST['submit']) )
-{
-  if (isset($_POST['product_name']) && !empty($_POST['product_name'])) {
-    echo $_POST['product_name'];
-}
-else {
-    echo 'Please ensure you have entered your details';
-}
-  echo "blabla2";
-}
+ include_once 'db-connection.php';
+ if(isset($_POST)){
 
+    if( isset($_POST['submit']) ) {
+      foreach ($_POST as $key => $value) {
+            $valid = checkIfInputIsValid($key, $value);
+            echo "<p>";
+            echo $key;
+            echo "   ";
+            echo $value;
+            echo "   ";
+            echo $valid;
+            echo "</p>"; 
+            
+          }
+    }
 }
+function checkIfInputIsValid($inputName, $inputVal){
+  $valid = false;
+    if(empty($inputVal)){
+      return $valid;
+    }
+    //check if Text contains location
+    if(strpos($inputName, LOCATION) == true ){
+      $valid = is_int($inputVal);
 
-
+    } else {
+      switch ($inputName) {
+        case PRODUCT_NAME :
+        case PRODUCT_IMG :
+        case USAGE :
+          $valid = is_string($inputVal);
+            break;
+        case WATER_CONSUMPTION :
+        case AVAILABLE_QUANTITY :
+          $valid = is_int($inputVal);
+            break;
+        case PRICE :
+            $valid = is_decimal($inputVal);
+            break;
+        }
+    }
+    return $valid;
+}
+function is_decimal( $val ){
+    return is_numeric( $val ) && floor( $val ) != $val;
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
