@@ -89,36 +89,37 @@ function is_decimal( $val ){
       </div>
     </div>
     
-    <!-- Multiple Checkboxes -->
-    <div class="form-group">
-      <label class="col-md-4 control-label" for="checkboxes">Produkt Standort</label>
-      <div class="col-md-4">
-      <div class="checkbox">
-        <label for="checkboxes-0">
-          <input type="checkbox" name="checkboxes_location_sonnig" id="checkboxes_location_sonnig" value="1">
-          sonnig
-        </label>
-      </div>
-      <div class="checkbox">
-        <label for="checkboxes-1">
-          <input type="checkbox" name="checkboxes_location_vollsonnig" id="checkboxes_location_vollsonnig" value="2">
-          vollsonnig
-        </label>
-      </div>
-      <div class="checkbox">
-        <label for="checkboxes-2">
-          <input type="checkbox" name="checkboxes_location_halbschattig" id="checkboxes_location_halbschattig" value="3">
-          halbschattig
-        </label>
-      </div>
-      <div class="checkbox">
-        <label for="checkboxes-3">
-          <input type="checkbox" name="checkboxes_location_schattig" id="checkboxes_location_schattig" value="4">
-          schattig
-        </label>
-      </div>
-      </div>
-    </div>
+
+    <!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_location">Produkt Standort</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="product_location-0">
+      <input type="radio" name="product_location" id="product_location-0" value="1">
+      sonnig
+    </label>
+	</div>
+  <div class="radio">
+    <label for="product_location-1">
+      <input type="radio" name="product_location" id="product_location-1" value="2">
+      vollsonnig
+    </label>
+	</div>
+  <div class="radio">
+    <label for="product_location-2">
+      <input type="radio" name="product_location" id="product_location-2" value="3">
+      halbschattig
+    </label>
+	</div>
+  <div class="radio">
+    <label for="product_location-3">
+      <input type="radio" name="product_location" id="product_location-3" value="4">
+      schattig
+    </label>
+	</div>
+  </div>
+</div>
     
     <!-- Multiple Radios -->
     <div class="form-group">
