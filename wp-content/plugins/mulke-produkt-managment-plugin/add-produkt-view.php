@@ -1,58 +1,10 @@
-<?php
- include_once 'db-connection.php';
- if(isset($_POST)){
-
-    if( isset($_POST['submit']) ) {
-      foreach ($_POST as $key => $value) {
-            $valid = checkIfInputIsValid($key, $value);
-            echo "<p>";
-            echo $key;
-            echo "   ";
-            echo $value;
-            echo "   ";
-            echo $valid;
-            echo "</p>"; 
-            
-          }
-    }
-}
-function checkIfInputIsValid($inputName, $inputVal){
-  $valid = false;
-    if(empty($inputVal)){
-      return $valid;
-    }
-    //check if Text contains location
-    if(strpos($inputName, LOCATION) == true ){
-      $valid = is_int($inputVal);
-
-    } else {
-      switch ($inputName) {
-        case PRODUCT_NAME :
-        case PRODUCT_IMG :
-        case USAGE :
-          $valid = is_string($inputVal);
-            break;
-        case WATER_CONSUMPTION :
-        case AVAILABLE_QUANTITY :
-          $valid = is_int($inputVal);
-            break;
-        case PRICE :
-            $valid = is_decimal($inputVal);
-            break;
-        }
-    }
-    return $valid;
-}
-function is_decimal( $val ){
-    return is_numeric( $val ) && floor( $val ) != $val;
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
   <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1894.5">
   <style type="text/css">
@@ -205,11 +157,61 @@ function is_decimal( $val ){
       </div>
     </div>
     <!-- Submit Button -->
-    <input class="btn btn-primary" type="submit" name = "submit"  value="submit">
+    <input class="btn btn-primary" type="button"  type="submit" name = "submit"  value="submit" id="saveproduct">
 
     
     </fieldset>
 
     </form>
+
+
+<script>
+$(document).ready(function() {
+	$('#saveproduct').on('click', function() {
+		$("#saveproduct").attr("disabled", "disabled");
+		var name = $('#product_name').val();
+    var productLocation = $("input[name='product_location']:checked").val();
+    var waterConsumption = $("input[name='water_consumption']:checked").val();
+		var productImg = $('#product_img').val();
+		var productUsage = $('#product_usage').val();
+    var productPrice = $('#product_price').val();
+    var availableQuantity = $('#available_quantity').val();
+
+		if(name!="" && email!="" && phone!="" && city!=""){
+			$.ajax({
+				url: "save-mulke-product.php",
+				type: "POST",
+				data: {
+					name: name,
+					productLocation: productLocation,
+					waterConsumption: waterConsumption,
+          productImg: productImg,
+					productUsage: productUsage,
+					productPrice: productPrice,
+					availableQuantity: availableQuantity,
+			
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+						$("#saveproduct").removeAttr("disabled");
+						$('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('Data added successfully !'); 						
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+		}
+		else{
+			alert('Please fill all the field !');
+		}
+	});
+});
+</script>
 </body>
 </html>
