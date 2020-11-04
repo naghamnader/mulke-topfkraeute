@@ -9,9 +9,10 @@
   <meta name="CocoaVersion" content="1894.5">
   <style type="text/css">
   </style>
-   <script language="Javascript">
-       // just allow number with comas 
-       function isNumberKey(evt)
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    // just allow number with comas 
+    function isNumberKey(evt)
        {
           var charCode = (evt.which) ? evt.which : event.keyCode
           if (charCode != 46 && charCode > 31 
@@ -20,19 +21,17 @@
 
           return true;
        }
-    </script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  </script>
 </head>
 <body>
-<form action="<?php the_permalink(); ?>" method='POST' class="form-horizontal" >
+<form method='post' class="form-horizontal" >
 
     <fieldset>
     
-    <!-- Form Name -->
+    <!-- Neue Produk Form  -->
     <legend>Neue Produkt</legend>
     
-    <!-- Text input-->
+    <!-- Produkt NameText input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_name">Produkt Name</label>  
       <div class="col-md-4">
@@ -42,7 +41,7 @@
     </div>
     
 
-    <!-- Multiple Radios -->
+    <!-- Produkt Standort Multiple Radios -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="product_location">Produkt Standort</label>
   <div class="col-md-4">
@@ -73,7 +72,7 @@
   </div>
 </div>
     
-    <!-- Multiple Radios -->
+    <!-- Wasser Verbrauch Multiple Radios -->
     <div class="form-group">
       <label class="col-md-4 control-label" for="water_consumption">Wasser Verbrauch</label>
       <div class="col-md-4">
@@ -122,7 +121,7 @@
       </div>
     </div>
     
-    <!-- Text input-->
+    <!-- Produkt Bild Url Text input-->
      <div class="form-group">
         <label class="col-md-4 control-label" for="product_img">Produkt Bild Url</label>  
       <div class="col-md-4">
@@ -131,7 +130,7 @@
       </div>
     </div>
 
-    <!-- Text input-->
+    <!-- Produkt Verwendung Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_usage">Produkt Verwendung</label>  
       <div class="col-md-4">
@@ -140,15 +139,16 @@
       </div>
     </div>
     
-    <!-- Text input-->
+    <!-- Produkt Prise Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_price">Produkt Prise</label>  
       <div class="col-md-4">
-      <input id="product_price" name="product_price" type="text" placeholder="Produkt Prise" class="form-control input-md" onkeypress="return isNumberKey(event)" >
+      <!-- placeholder Übersetzen-->
+      <input id="product_price" name="product_price" type="text" placeholder="Bitte die Prise cents mit '.' angebeb" class="form-control input-md" onkeypress="return isNumberKey(event)" >
         
       </div>
     </div>
-     <!-- Text input-->
+     <!-- Verfügbare Menge Text input-->
      <div class="form-group">
       <label class="col-md-4 control-label" for="available_quantity">Verfügbare Menge</label>  
       <div class="col-md-4">
@@ -166,20 +166,24 @@
 
 
 <script>
+var pluginUrl = '<?php echo plugins_url(); ?>' ;
+
+
 $(document).ready(function() {
 	$('#saveproduct').on('click', function() {
 		$("#saveproduct").attr("disabled", "disabled");
 		var name = $('#product_name').val();
-    var productLocation = $("input[name='product_location']:checked").val();
-    var waterConsumption = $("input[name='water_consumption']:checked").val();
+    var productLocation = parseInt($("input[name='product_location']:checked").val())|| 0;
+    var waterConsumption = parseInt($("input[name='water_consumption']:checked").val())|| 0;
 		var productImg = $('#product_img').val();
 		var productUsage = $('#product_usage').val();
-    var productPrice = $('#product_price').val();
-    var availableQuantity = $('#available_quantity').val();
+    var productPrice = parseFloat($('#product_price').val())|| 0;
+    var availableQuantity = parseInt($('#available_quantity').val())|| 0;
 
-		if(name!="" && email!="" && phone!="" && city!=""){
-			$.ajax({
-				url: "save-mulke-product.php",
+    if(checkDataValidation(name, productImg, productUsage, waterConsumption,
+        productLocation, availableQuantity, productPrice)){
+				$.ajax({
+          url: pluginUrl + "/mulke-produkt-managment-plugin/save-mulke-product.php",
 				type: "POST",
 				data: {
 					name: name,
@@ -195,10 +199,8 @@ $(document).ready(function() {
 				success: function(dataResult){
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
-						$("#saveproduct").removeAttr("disabled");
-						$('#fupForm').find('input:text').val('');
-						$("#success").show();
-						$('#success').html('Data added successfully !'); 						
+            alert("Produkt wurde erfolgreich hochgeladen :)");
+						location.reload(false);					
 					}
 					else if(dataResult.statusCode==201){
 					   alert("Error occured !");
@@ -206,10 +208,26 @@ $(document).ready(function() {
 					
 				}
 			});
-		}
-		else{
-			alert('Please fill all the field !');
-		}
+
+    }else{
+      alert('something is not valid!');
+
+    }
+    function checkDataValidation(name, productImg, productUsage, waterConsumption,
+                              productLocation, availableQuantity, productPrice){
+
+  if(typeof(name) != "string"  || name === ""
+  || typeof(productImg) != "string" || productImg === ""
+  || typeof(productUsage) != "string" || productUsage === ""
+  || typeof(productLocation) != "number" || productLocation === 0
+  || typeof(waterConsumption) != "number" || waterConsumption === 0
+  || typeof(availableQuantity) != "number" || availableQuantity === 0
+  || typeof(productPrice) != "number" || productPrice ===0){
+    return false;
+  }
+  return true;
+
+}
 	});
 });
 </script>
