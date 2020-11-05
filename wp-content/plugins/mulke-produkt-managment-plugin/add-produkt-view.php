@@ -4,6 +4,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
   <title></title>
+
+    <!-- include AlertifyJs -->
+  <script type="text/javascript" src="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/alertify.min.js"></script>
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/css/alertify.min.css" />
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/css/themes/default.min.css" />
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1894.5">
@@ -199,19 +205,19 @@ $(document).ready(function() {
 				success: function(dataResult){
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
-            alert("Produkt wurde erfolgreich hochgeladen :)");
+            alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
 						location.reload(false);					
 					}
 					else if(dataResult.statusCode==201){
-					   alert("Error occured !");
+            alertify.alert('Add product', 'Error occured !', function(){ location.reload(false); });
 					}
 					
 				}
 			});
 
     }else{
-      alert('something is not valid!');
-
+      alertify.alert('Add product', 'something is not valid!', function(){ location.reload(false); });
+      
     }
     function checkDataValidation(name, productImg, productUsage, waterConsumption,
                               productLocation, availableQuantity, productPrice){
