@@ -206,7 +206,6 @@ $(document).ready(function() {
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
             alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
-						location.reload(false);					
 					}
 					else if(dataResult.statusCode==201){
             alertify.alert('Add product', 'Error occured !', function(){ location.reload(false); });
