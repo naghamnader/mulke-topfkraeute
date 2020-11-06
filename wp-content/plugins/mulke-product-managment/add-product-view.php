@@ -6,9 +6,9 @@
   <title></title>
 
     <!-- include AlertifyJs -->
-  <script type="text/javascript" src="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/alertify.min.js"></script>
-  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/css/alertify.min.css" />
-  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-produkt-managment-plugin/styling/alertifyjs/css/themes/default.min.css" />
+  <script type="text/javascript" src="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/alertify.min.js"></script>
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/alertify.min.css" />
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/themes/default.min.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta name="Generator" content="Cocoa HTML Writer">
@@ -189,7 +189,7 @@ $(document).ready(function() {
     if(checkDataValidation(name, productImg, productUsage, waterConsumption,
         productLocation, availableQuantity, productPrice)){
 				$.ajax({
-          url: pluginUrl + "/mulke-produkt-managment-plugin/save-mulke-product.php",
+          url: pluginUrl + "/mulke-product-managment/save-mulke-product.php",
 				type: "POST",
 				data: {
 					name: name,

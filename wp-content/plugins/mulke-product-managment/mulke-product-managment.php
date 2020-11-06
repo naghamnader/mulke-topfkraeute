@@ -79,7 +79,7 @@ function open_plugin_home(){
 }
 function open_add_produkt(){
     
-    include 'add-produkt-view.php';
+    include 'add-product-view.php';
 }
 
  
