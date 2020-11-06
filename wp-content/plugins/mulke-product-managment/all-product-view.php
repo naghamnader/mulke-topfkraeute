@@ -2,7 +2,16 @@
 <html>
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<style>
+td, th{
+    vertical-align: middle!important;
+}
+img {
+  width: 200px;
+  height: 150px;
+}
+</style>
 </head>
 <body>
 
@@ -15,7 +24,7 @@
       <th class="product-name">Produkt Name</th>
       <th class="product-location">Produkt Standort</th>
       <th class="water-consumption">Wasser Verbrauch</th>
-      <th class="product-img">Produkt Bild</th>
+      <th class="product-img align-middle">Produkt Bild</th>
       <th class="product-usage">Produkt Verwendung</th>
       <th class="product-price">Produkt Prise</th>
       <th class="available-quantity">Verfügbare Menge</th>
@@ -42,12 +51,14 @@
             echo "<td>" . $row['product_name'] . "</td>";
             echo "<td>" . $row['product_location'] . "</td>";
             echo "<td>" . $row['water_consumption'] . "</td>";
-            echo "<td>" . $row['product_img'] . "</td>";
+            echo "<td><img src='" . $row['product_img'] . "'class='img-rounded'></td>";
             echo "<td>" . $row['product_usage'] . "</td>";
-            echo "<td>" . $row['product_price'] . "</td>";
+            echo "<td>" . $row['product_price'] . " &#8364;</td>";
             echo "<td>" . $row['available_quantity'] . "</td>";
-            echo "<td>  test</td>"; 
-            echo "<td> test</td>"; 
+            echo "<td><button type='button'class='btn btn-secondary'><i class='far fa-edit'></i>
+            </button></td>"; 
+            echo "<td><button type='button'class='btn btn-danger'><i class='fas fa-trash'></i>
+            </button></td>"; 
 
 
             echo "</tr>";
@@ -65,3 +76,4 @@
 
 </body>
 </html>
+
