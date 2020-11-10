@@ -174,7 +174,6 @@
 <script>
 var pluginUrl = '<?php echo plugins_url(); ?>' ;
 
-
 $(document).ready(function() {
 	$('#saveproduct').on('click', function() {
 		$("#saveproduct").attr("disabled", "disabled");
@@ -208,7 +207,7 @@ $(document).ready(function() {
             alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
 					}
 					else if(dataResult.statusCode==201){
-            alertify.alert('Add product', 'Error occured !', function(){ location.reload(false); });
+            alertify.alert('Add product', 'something is not valid!', function(){ location.reload(false); });
 					}
 					
 				}
