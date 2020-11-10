@@ -14,7 +14,9 @@ body {
 }
 .product-box-parent{
 	margin: 4%;
+    padding-bottom: 4%;
 	border-radius: 10px;
+	position: relative;
     background: linear-gradient(300deg, rgba(8,225,174,0.24273459383753504) 0%, rgba(152,222,91,0.40800070028011204) 31%, rgba(8,225,174,0.37718837535014005) 100%);
 
 }
@@ -32,6 +34,10 @@ p {
 	display: flex;
 	flex-wrap: wrap;
 } 
+.cart-btn-holder{
+    bottom: 2%;
+    position: absolute;
+}
 input[type=number]::-webkit-inner-spin-button {
 	/** show the number picker buttons all the time */
   opacity: 1;
@@ -45,6 +51,7 @@ input[type=number]::-webkit-inner-spin-button {
     margin-bottom: 3%;
 }
 </style>
+
 	<div class="container-fluid">
 					
 		<?php 
@@ -62,16 +69,17 @@ input[type=number]::-webkit-inner-spin-button {
 				if($i % 3 == 1) {
 					echo "<div class='row product-row'>";
 				}
-                echo "<div class='headline col-md-3 product-box-parent' id ='product-box-" . $row['id'] . "'><div class='product-box-holder'>";
+                echo "<div class='headline col-md-3 product-box-parent' id ='product-box-" . $row['id'] . "'>";
                 echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div>";
                 echo "<h3 class='col-md-8'><strong>" . $row['product_name'] . "</strong></h3>";
                 echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
                 echo "<p class='col-md-7'><strong>Location:</strong> " . $row['product_location'] . "</p>";
                 echo "<p class='col-md-7'><strong>Wasser:</strong> " . $row['water_consumption'] . "</p>";
-                echo "<p class='col-md-11'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
-                echo "<div class='col-md-3'><input type='number' value='1' min='0' max='100' step='1'/></div>";
-                echo "<div class='col-md-4 text-center'><button type='button'class='btn btn-success btn-lg'><i class='fa fa-cart-plus'></i></button></div>";
-				echo "</div></div>";
+				echo "<p class='col-md-11'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
+				echo "<div class='col-md-7 cart-btn-holder'>";
+				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
+				echo "</div>";
+				echo "</div>";
 
 				if($i % 3 == 0) {
 					echo "</div>";
