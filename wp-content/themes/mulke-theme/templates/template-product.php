@@ -9,6 +9,9 @@ get_header();
 <section class="page-wrapper">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <style>
+body {
+  overscroll-behavior-y: none;
+}
 .product-box-parent{
 	margin: 4%;
 	border-radius: 10px;
