@@ -13,11 +13,13 @@ body {
   overscroll-behavior-y: none;
 }
 .product-box-parent{
-	margin: 4%;
-    padding-bottom: 4%;
+    height: 100%;
 	border-radius: 10px;
-	position: relative;
     background: linear-gradient(300deg, rgba(8,225,174,0.24273459383753504) 0%, rgba(152,222,91,0.40800070028011204) 31%, rgba(8,225,174,0.37718837535014005) 100%);
+
+}
+.product-box-parent-col{
+	position: relative;
 
 }
 p {
@@ -50,6 +52,9 @@ input[type=number]::-webkit-inner-spin-button {
 	margin-top: 3%;
     margin-bottom: 3%;
 }
+.prise-col{
+    margin-bottom: 25%;
+}
 </style>
 
 	<div class="container-fluid">
@@ -69,19 +74,19 @@ input[type=number]::-webkit-inner-spin-button {
             // output data of each row
             while($row = $result->fetch_assoc()) {
 				if($i % 3 == 1) {
-					echo "<div class='row product-row'>";
+					echo "<div class='row product-row padding-top-30 padding-bottom-30'>";
 				}
-                echo "<div class='headline col-md-3 product-box-parent' id ='product-box-" . $row['id'] . "'>";
+                echo "<div class='headline col-md-4 product-box-parent-col' id ='product-box-" . $row['id'] . "'><div class='product-box-parent'>";
                 echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div><!-- /.img-holder -->";
-                echo "<h3 class='col-md-8'><strong>" . $row['product_name'] . "</strong></h3>";
+                echo "<h3 class='col-md-10'><strong>" . $row['product_name'] . "</strong></h3>";
                 echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
-                echo "<p class='col-md-7'><strong>Location:</strong> " . getProductLocation($row['product_location']) . "</p>";
-                echo "<p class='col-md-7'><strong>Wasser:</strong> " . getProductWaterConsumption($row['water_consumption']) . "</p>";
-				echo "<p class='col-md-11'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
+                echo "<p class='col-md-10'><strong>Location:</strong> " . getProductLocation($row['product_location']) . "</p>";
+                echo "<p class='col-md-10'><strong>Wasser:</strong> " . getProductWaterConsumption($row['water_consumption']) . "</p>";
+				echo "<p class='col-md-11 prise-col'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
 				echo "<div class='col-md-7 cart-btn-holder'>";
 				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
 				echo "</div><!-- /.cart-btn-holder -->";
-				echo "</div><!-- /.product-box-parent -->";
+				echo "</div></div><!-- /.product-box-parent -->";
 
 				if($i % 3 == 0 || $i == $result->num_rows) {
 					echo "</div> <!-- /.product-row -->";
