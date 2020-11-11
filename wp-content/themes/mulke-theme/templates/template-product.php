@@ -62,6 +62,7 @@ input[type=number]::-webkit-inner-spin-button {
             if (!$result) {
                 trigger_error('Invalid query: ' . $conn->error);
             }
+            echo "<div class='col-md-9'>";
             if ($result->num_rows > 0) {
 				$i = 1;
             // output data of each row
@@ -70,7 +71,7 @@ input[type=number]::-webkit-inner-spin-button {
 					echo "<div class='row product-row'>";
 				}
                 echo "<div class='headline col-md-3 product-box-parent' id ='product-box-" . $row['id'] . "'>";
-                echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div>";
+                echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div><!-- /.img-holder -->";
                 echo "<h3 class='col-md-8'><strong>" . $row['product_name'] . "</strong></h3>";
                 echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
                 echo "<p class='col-md-7'><strong>Location:</strong> " . $row['product_location'] . "</p>";
@@ -78,20 +79,25 @@ input[type=number]::-webkit-inner-spin-button {
 				echo "<p class='col-md-11'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
 				echo "<div class='col-md-7 cart-btn-holder'>";
 				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
-				echo "</div>";
-				echo "</div>";
+				echo "</div><!-- /.cart-btn-holder -->";
+				echo "</div><!-- /.product-box-parent -->";
 
-				if($i % 3 == 0) {
-					echo "</div>";
+				if($i % 3 == 0 || $i == $result->num_rows) {
+					echo "</div> <!-- /.product-row -->";
 				}
-				$i++;
+                $i++;
             }
+            echo "</div><!-- /.products-column -->";
+            
             } else {
             echo "0 results";
             }
             $conn->close(); 
             
         ?>
+         <?php if ( is_active_sidebar( 'sidebar-product' ) ) : ?>
+        <?php dynamic_sidebar( 'sidebar-product' ); ?>
+        <?php endif; ?>
 	</div><!-- /.container -->
 </section>
 <?php
