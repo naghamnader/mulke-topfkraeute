@@ -49,8 +49,8 @@ img {
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['product_name'] . "</td>";
-            echo "<td>" . $row['product_location'] . "</td>";
-            echo "<td>" . $row['water_consumption'] . "</td>";
+            echo "<td>" . getProductLocation($row['product_location']) . "</td>";
+            echo "<td>" . getProductWaterConsumption($row['water_consumption']) . "</td>";
             echo "<td><img src='" . $row['product_img'] . "'class='img-rounded'></td>";
             echo "<td>" . $row['product_usage'] . "</td>";
             echo "<td>" . $row['product_price'] . " &#8364;</td>";
@@ -67,7 +67,53 @@ img {
         echo "0 results";
         }
         $conn->close(); 
-        
+
+
+        function getProductLocation($key) {
+          $value = "";
+          switch($key){
+              case 1:
+                  $value = "sonnig";
+              break; 
+              case 2:
+                  $value = "vollsonnig";
+              break; 
+              case 3:
+                  $value = "halbschattig";
+              break; 
+              case 4:
+                  $value = "schattig";
+              break; 
+          }
+          return $value;
+      }
+      function getProductWaterConsumption($key) {
+          $value = "";
+          switch($key){
+              case 1:
+                  $value = "mittel";
+              break; 
+              case 2:
+                  $value = "mäßig feucht";
+              break; 
+              case 3:
+                  $value = "feucht";
+              break; 
+              case 4:
+                  $value = "leicht feucht";
+              break; 
+              case 5:
+                  $value = "mäßig";
+              break; 
+              case 6:
+                  $value = "mäßig trocken";
+              break; 
+              case 7:
+                  $value = "trocken";
+              break; 
+          }
+          return $value;
+      }
     ?>
   </tbody>
   <!--Table body-->
