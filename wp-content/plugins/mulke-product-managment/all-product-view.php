@@ -3,6 +3,12 @@
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- include AlertifyJs -->
+  <script type="text/javascript" src="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/alertify.min.js"></script>
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/alertify.min.css" />
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/themes/default.min.css" />
+
 <style>
 td, th{
     vertical-align: middle!important;
@@ -12,6 +18,30 @@ img {
   height: 150px;
 }
 </style>
+<script>
+  var pluginUrl = '<?php echo plugins_url(); ?>' ;
+
+   function deleteProduct(productId)
+  {
+    jQuery.ajax({
+    url: pluginUrl + '/mulke-product-managment/delete-product.php',
+    type:'POST',
+    data:{productId:productId},
+    cache: false,
+      success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+            alertify.alert('Delete product', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML=""; });
+            
+					}
+					else if(dataResult.statusCode==201){
+            alertify.alert('Delete product', 'something is not valid!');
+					}
+					
+				}
+     });
+  }
+</script>
 </head>
 <body>
 
@@ -46,7 +76,7 @@ img {
         if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-            echo "<tr>";
+            echo "<tr id ='" . $row['id'] . "'>";
             echo "<td>" . $row['id'] . "</td>";
             echo "<td>" . $row['product_name'] . "</td>";
             echo "<td>" . getProductLocation($row['product_location']) . "</td>";
@@ -57,7 +87,7 @@ img {
             echo "<td>" . $row['available_quantity'] . "</td>";
             echo "<td><button type='button'class='btn btn-secondary'><i class='far fa-edit'></i>
             </button></td>"; 
-            echo "<td><button type='button'class='btn btn-danger'><i class='fas fa-trash'></i>
+            echo "<td><button type='button' onclick='deleteProduct(" . $row['id'] . ")' class='btn btn-danger delete-product-btn'><i class='fas fa-trash'></i>
             </button></td>"; 
 
 
