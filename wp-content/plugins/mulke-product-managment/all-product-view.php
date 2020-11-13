@@ -23,7 +23,9 @@ img {
 
    function deleteProduct(productId)
   {
-    jQuery.ajax({
+
+    alertify.confirm('Delete product', 'Sure to delete?', function(){ 
+      jQuery.ajax({
     url: pluginUrl + '/mulke-product-managment/delete-product.php',
     type:'POST',
     data:{productId:productId},
@@ -40,6 +42,9 @@ img {
 					
 				}
      });
+     }
+     //cancel function
+    , function(){ return;});   
   }
 </script>
 </head>
