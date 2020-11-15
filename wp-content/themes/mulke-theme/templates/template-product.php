@@ -8,6 +8,12 @@ get_header();
 
 <section class="page-wrapper">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- To prevent forms from submitting again when refreshing the page // double pay, etc  -->
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
 <style>
 body {
   overscroll-behavior-y: none;
