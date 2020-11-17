@@ -41,6 +41,7 @@
   <tbody>
 
   <?php 
+    include "convert-product-info.php";
     include "db-connection.php";
     //show saved produkte
         $sql = "SELECT * FROM mulke_product";
@@ -62,6 +63,7 @@
             echo "<td>" . $row['available_quantity'] . "</td>";
             echo "<td><button type='button'class='btn btn-secondary'><i class='far fa-edit'></i>
             </button></td>"; 
+            //java script delete function
             echo "<td><button type='button' onclick='deleteProduct(" . $row['id'] . ")' class='btn btn-danger delete-product-btn'><i class='fas fa-trash'></i>
             </button></td>"; 
 
@@ -72,53 +74,7 @@
         echo "0 results";
         }
         $conn->close(); 
-
-
-        function getProductLocation($key) {
-          $value = "";
-          switch($key){
-              case 1:
-                  $value = "sonnig";
-              break; 
-              case 2:
-                  $value = "vollsonnig";
-              break; 
-              case 3:
-                  $value = "halbschattig";
-              break; 
-              case 4:
-                  $value = "schattig";
-              break; 
-          }
-          return $value;
-      }
-      function getProductWaterConsumption($key) {
-          $value = "";
-          switch($key){
-              case 1:
-                  $value = "mittel";
-              break; 
-              case 2:
-                  $value = "mäßig feucht";
-              break; 
-              case 3:
-                  $value = "feucht";
-              break; 
-              case 4:
-                  $value = "leicht feucht";
-              break; 
-              case 5:
-                  $value = "mäßig";
-              break; 
-              case 6:
-                  $value = "mäßig trocken";
-              break; 
-              case 7:
-                  $value = "trocken";
-              break; 
-          }
-          return $value;
-      }
+       
     ?>
   </tbody>
   <!--Table body-->
