@@ -9,44 +9,14 @@
   <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/alertify.min.css" />
   <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/styling/alertifyjs/css/themes/default.min.css" />
 
-<style>
-td, th{
-    vertical-align: middle!important;
-}
-img {
-  width: 200px;
-  height: 150px;
-}
-</style>
-<script>
-  var pluginUrl = '<?php echo plugins_url(); ?>' ;
 
-   function deleteProduct(productId)
-  {
-
-    alertify.confirm('Delete product', 'Sure to delete?', function(){ 
-      jQuery.ajax({
-    url: pluginUrl + '/mulke-product-managment/delete-product.php',
-    type:'POST',
-    data:{productId:productId},
-    cache: false,
-      success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
-            alertify.alert('Delete product', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML=""; });
-            
-					}
-					else if(dataResult.statusCode==201){
-            alertify.alert('Delete product', 'something is not valid!');
-					}
-					
-				}
-     });
-     }
-     //cancel function
-    , function(){ return;});   
-  }
-</script>
+  <!-- include JS mulke function -->
+  <script>  var pluginUrl = '<?php echo plugins_url(); ?>' ;  </script>
+  <script type="text/javascript" src="<?php echo plugins_url(); ?>/mulke-product-managment/mulke-function.js"></script>
+ 
+  <!-- include mulke css style  -->
+  <link rel="stylesheet" href="<?php echo plugins_url(); ?>/mulke-product-managment/mulke-style.css" />
+  
 </head>
 <body>
 
