@@ -33,7 +33,7 @@
 					name: name,
 					productLocation: productLocation,
 					waterConsumption: waterConsumption,
-          productImg: productImg,
+                    productImg: productImg,
 					productUsage: productUsage,
 					productPrice: productPrice,
 					availableQuantity: availableQuantity,
@@ -97,4 +97,20 @@ function deleteProduct(productId)
      }
      //cancel function
     , function(){ return;});   
+  }
+
+  function showEditProduct(productId)
+  {
+    document.getElementById("product-edit-" + productId).style.display = 'table-row';
+
+   /*  alertify.confirm('Edit product', 'Sure to Edit?', function(){ 
+      jQuery.ajax({
+    url: pluginUrl + '/mulke-product-managment/edit-product.php',
+    type:'POST',
+    data:{productId:productId},
+    cache: false
+     });
+     }
+     //cancel function
+    , function(){ return;});   */ 
   }
