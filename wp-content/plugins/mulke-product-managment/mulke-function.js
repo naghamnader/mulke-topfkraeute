@@ -105,7 +105,7 @@ function deleteProduct(productId)
 
    /*  alertify.confirm('Edit product', 'Sure to Edit?', function(){ 
       jQuery.ajax({
-    url: pluginUrl + '/mulke-product-managment/edit-product.php',
+    url: pluginUrl + '/mulke-product-managment/update-product.php',
     type:'POST',
     data:{productId:productId},
     cache: false
