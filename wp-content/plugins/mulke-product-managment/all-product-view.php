@@ -97,7 +97,7 @@ if ($result->num_rows > 0) {
             </div>
 
             <!--  Standort & Wasser Verbrauch Row -->
-            <div class='row'>
+            <div class='row gray-bg'>
             
               <!-- Produkt Standort Multiple Radios -->
               <div class='form-group col-md-5'>
@@ -183,7 +183,7 @@ if ($result->num_rows > 0) {
             </div>
             
             <!--  Preis & Menge  Row -->
-            <div class='row'>
+            <div class='row gray-bg'>
 
               <!-- Produkt Prise Text input-->
               <div class='form-group col-md-5'>

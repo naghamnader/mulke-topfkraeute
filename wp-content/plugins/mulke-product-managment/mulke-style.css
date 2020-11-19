@@ -21,3 +21,7 @@ td, img {
 .product-edit-form{
   display: none;
 }
+
+.gray-bg {
+  background-color: #F0F0F0;
+}
