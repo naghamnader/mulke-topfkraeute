@@ -110,7 +110,7 @@ function deleteProduct(productId)
           var dataResult = JSON.parse(dataResult);
           // if success show success alert and remove deleted product from html table
 					if(dataResult.statusCode==200){
-            alertify.alert('Delete product', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML=""; });
+            alertify.alert('Delete product', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML="";document.getElementById("product-edit-" + productId).outerHTML=""; });
             
 					}
 					else if(dataResult.statusCode==201){
@@ -127,8 +127,23 @@ function deleteProduct(productId)
 // show product edit view when user click on edit icon
   function showEditProduct(productId)
   {
-    document.getElementById("product-edit-" + productId).style.display = 'table-row';
-
+    var x = document.getElementById("product-edit-" + productId);
+    if(x.style.display === "none"){
+      var formsToHide = document.getElementsByClassName("product-edit-form")
+      if (formsToHide.length > 0){
+        for(var i = 0; i < formsToHide.length; i++){
+          formsToHide[i].style.display = "none"; // depending on what you're doing
+       }
+       x.style.display = "table-row";
+       x.scrollIntoView(false);
+      }
+    }
+    else {
+     
+        x.style.display = "none";
+    }
+  
+  
    /*  alertify.confirm('Edit product', 'Sure to Edit?', function(){ 
       jQuery.ajax({
     url: pluginUrl + '/mulke-product-managment/update-product.php',
