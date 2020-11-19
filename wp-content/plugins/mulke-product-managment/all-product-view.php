@@ -91,32 +91,34 @@ if ($result->num_rows > 0) {
             <div class='form-group'>
               <label class='col-md-4 control-label' for='product_name'>Produkt Name</label>  
               <div class='col-md-4'>
-              <input id='product_name' name='product_name' type='text' placeholder='Produkt Name' class='form-control input-md' required=''>
+              <input id='product_name' name='product_name' type='text' value='" . $row['product_name'] . "' class='form-control input-md' >
                 
               </div>
             </div>
+            <!-- Check the saved Product Location  -->
+            <script>setlocationValue(" . $row['product_location'] . ");</script>
 
             <!--  Standort & Wasser Verbrauch Row -->
             <div class='row gray-bg'>
             
               <!-- Produkt Standort Multiple Radios -->
               <div class='form-group col-md-5'>
-                <label class='col-md-4 control-label' for='product_location'>Produkt Standort</label>
+                <label class='col-md-4 control-label' for='product_location_edit'>Produkt Standort</label>
                 <div class='col-md-10'> 
                   <label class='radio-inline' for='product_location-0'>
-                    <input type='radio' name='product_location' id='product_location-0' value='1'>
+                    <input type='radio' name='product_location_edit' id='product_location-0' value='1'>
                     sonnig
                   </label> 
                   <label class='radio-inline' for='product_location-1'>
-                    <input type='radio' name='product_location' id='product_location-1' value='2'>
+                    <input type='radio' name='product_location_edit' id='product_location-1' value='2'>
                     vollsonnig
                   </label> 
                   <label class='radio-inline' for='product_location-2'>
-                    <input type='radio' name='product_location' id='product_location-2' value='3'>
+                    <input type='radio' name='product_location_edit' id='product_location-2' value='3'>
                     halbschattig
                   </label> 
                   <label class='radio-inline' for='product_location-3'>
-                    <input type='radio' name='product_location' id='product_location-3' value='4'>
+                    <input type='radio' name='product_location_edit' id='product_location-3' value='4'>
                     schattig
                   </label>
                 </div>

@@ -14,6 +14,10 @@
      return true;
   }
 
+  function setlocationValue(radiosValue){
+    jQuery("input[name=product_location_edit][value=" + radiosValue + "]").prop('checked', true);
+
+  }
 
 
   // add the Save product button function with ajax
