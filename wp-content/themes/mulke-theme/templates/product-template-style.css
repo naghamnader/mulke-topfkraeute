@@ -1,0 +1,46 @@
+body {
+    overscroll-behavior-y: none;
+  }
+  .product-box-parent{
+      height: 100%;
+      border-radius: 10px;
+      background: linear-gradient(300deg, rgba(8,225,174,0.24273459383753504) 0%, rgba(152,222,91,0.40800070028011204) 31%, rgba(8,225,174,0.37718837535014005) 100%);
+  
+  }
+  .product-box-parent-col{
+      position: relative;
+  
+  }
+  p {
+      color: black;
+      font-size: 15px;
+      font-family: 'Raleway', sans-serif;
+  }
+  .product-row{
+  
+      /** same height for all columns */
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      flex-wrap: wrap;
+  } 
+  .cart-btn-holder{
+      bottom: 2%;
+      position: absolute;
+  }
+  input[type=number]::-webkit-inner-spin-button {
+      /** show the number picker buttons all the time */
+    opacity: 1;
+  }
+  .product-img{
+      width:100% !important;
+      height: 250px!important;
+  }
+  .img-holder{
+      margin-top: 3%;
+      margin-bottom: 3%;
+  }
+  .prise-col{
+      margin-bottom: 25%;
+  }
