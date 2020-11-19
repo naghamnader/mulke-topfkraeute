@@ -18,6 +18,8 @@
     jQuery("input[name=product_location_edit" + productid + "][value=" + radiosValue + "]").prop('checked', true);
 
   }
+  function setWaterValue(radiosValue , productid){
+    jQuery("input[name=water_consumption_edit" + productid + "][value=" + radiosValue + "]").prop('checked', true);
 
   }
 

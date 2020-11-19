@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
         
         // product edit view, will be hidden till user click on edit
         echo "</tr>";
-        echo "<tr class ='product-edit-form' id = 'product-edit-" . $row['id'] . "'><td colspan=10>
+        echo "<tr class ='product-edit-form gray-bg' id = 'product-edit-" . $row['id'] . "'><td colspan=10>
             <form method='post' class='form-horizontal' >
             
             <!-- Edit Produkt Form  -->
@@ -97,7 +97,7 @@ if ($result->num_rows > 0) {
             </div>
 
             <!--  Standort & Wasser Verbrauch Row -->
-            <div class='row gray-bg'>
+            <div class='row '>
             
               <!-- Produkt Standort Multiple Radios -->
               <div class='form-group col-md-5'>
@@ -122,46 +122,48 @@ if ($result->num_rows > 0) {
                 </div>
               </div>
               
+              <!-- Check the saved Product Location  -->
+              <script>setlocationValue(" . $row['product_location'] . ' , ' . $row['id'] . ");</script>
 
-            <!-- Check the saved Product Location  -->
-            <script>setlocationValue(" . $row['product_location'] . ' , ' . $row['id'] . ");</script>
-
-            
               <!-- Wasser Verbrauch Multiple Radios -->
               <div class='form-group col-md-5'>
-                <label class='col-md-4 control-label' for='water_consumption'>Wasser Verbrauch</label>
+                <label class='col-md-4 control-label' for='water_consumption_edit" . $row['id'] . "'>Wasser Verbrauch</label>
                 <div class='col-md-10'> 
                   <label class='radio-inline' for='water_consumption_0'>
-                    <input type='radio' name='water_consumption' id='water_consumption_mittel' value='1'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_mittel' value='1'>
                     mittel
                   </label> 
                   <label class='radio-inline' for='water_consumption_1'>
-                    <input type='radio' name='water_consumption' id='water_consumption_maeßigFeucht' value='2'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_maeßigFeucht' value='2'>
                     mäßig feucht
                   </label> 
                   <label class='radio-inline' for='water_consumption_2'>
-                    <input type='radio' name='water_consumption' id='water_consumption_feucht' value='3'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_feucht' value='3'>
                     feucht
                   </label> 
                   <label class='radio-inline' for='water_consumption_3'>
-                    <input type='radio' name='water_consumption' id='water_consumption_leichtFeucht' value='4'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_leichtFeucht' value='4'>
                     leicht feucht
                   </label> 
                   <label class='radio-inline' for='water_consumption_4'>
-                    <input type='radio' name='water_consumption' id='water_consumption_maeßig' value='5'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_maeßig' value='5'>
                     mäßig
                   </label> 
                   <label class='radio-inline' for='water_consumption_5'>
-                    <input type='radio' name='water_consumption' id='water_consumption_maeßigTrocken' value='6'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_maeßigTrocken' value='6'>
                     mäßig trocken
                   </label> 
                   <label class='radio-inline' for='water_consumption_6'>
-                    <input type='radio' name='water_consumption' id='water_consumption_trocken' value='7'>
+                    <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_trocken' value='7'>
                     trocken
                   </label>
                 </div>
               </div>
             
+
+              <!-- Check the saved Product Water Consumption  -->
+              <script>setWaterValue(" . $row['water_consumption'] . ' , ' . $row['id'] . ");</script>
+
             </div>
 
             <!--  Bild & Verwendung Row -->
@@ -188,7 +190,7 @@ if ($result->num_rows > 0) {
             </div>
             
             <!--  Preis & Menge  Row -->
-            <div class='row gray-bg'>
+            <div class='row '>
 
               <!-- Produkt Prise Text input-->
               <div class='form-group col-md-5'>
