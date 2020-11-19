@@ -99,80 +99,58 @@ if ($result->num_rows > 0) {
             <!-- Produkt Standort Multiple Radios -->
             <div class='form-group'>
               <label class='col-md-4 control-label' for='product_location'>Produkt Standort</label>
-              <div class='col-md-4'>
-              <div class='radio'>
-                <label for='product_location-0'>
+              <div class='col-md-4'> 
+                <label class='radio-inline' for='product_location-0'>
                   <input type='radio' name='product_location' id='product_location-0' value='1'>
                   sonnig
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='product_location-1'>
+                </label> 
+                <label class='radio-inline' for='product_location-1'>
                   <input type='radio' name='product_location' id='product_location-1' value='2'>
                   vollsonnig
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='product_location-2'>
+                </label> 
+                <label class='radio-inline' for='product_location-2'>
                   <input type='radio' name='product_location' id='product_location-2' value='3'>
                   halbschattig
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='product_location-3'>
+                </label> 
+                <label class='radio-inline' for='product_location-3'>
                   <input type='radio' name='product_location' id='product_location-3' value='4'>
                   schattig
                 </label>
-              </div>
               </div>
             </div>
             
             <!-- Wasser Verbrauch Multiple Radios -->
             <div class='form-group'>
               <label class='col-md-4 control-label' for='water_consumption'>Wasser Verbrauch</label>
-              <div class='col-md-4'>
-              <div class='radio'>
-                <label for='water_consumption_0'>
+              <div class='col-md-4'> 
+                <label class='radio-inline' for='water_consumption_0'>
                   <input type='radio' name='water_consumption' id='water_consumption_mittel' value='1'>
                   mittel
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_1'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_1'>
                   <input type='radio' name='water_consumption' id='water_consumption_maeßigFeucht' value='2'>
                   mäßig feucht
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_2'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_2'>
                   <input type='radio' name='water_consumption' id='water_consumption_feucht' value='3'>
                   feucht
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_3'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_3'>
                   <input type='radio' name='water_consumption' id='water_consumption_leichtFeucht' value='4'>
                   leicht feucht
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_4'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_4'>
                   <input type='radio' name='water_consumption' id='water_consumption_maeßig' value='5'>
                   mäßig
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_5'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_5'>
                   <input type='radio' name='water_consumption' id='water_consumption_maeßigTrocken' value='6'>
                   mäßig trocken
-                </label>
-              </div>
-              <div class='radio'>
-                <label for='water_consumption_6'>
+                </label> 
+                <label class='radio-inline' for='water_consumption_6'>
                   <input type='radio' name='water_consumption' id='water_consumption_trocken' value='7'>
                   trocken
                 </label>
-              </div>
               </div>
             </div>
             
