@@ -1,4 +1,6 @@
 <?php
+/* Description: show all product in box view and sidebar with shopping cart )
+Author: Nagham Nader , ??  */
 /**
 Template Name: Produkt Template
 */
@@ -77,8 +79,9 @@ input[type=number]::-webkit-inner-spin-button {
             echo "<div class='col-md-9'>";
             if ($result->num_rows > 0) {
 				$i = 1;
-            // output data of each row
+            // output data of each row and list all products in styled boxes
             while($row = $result->fetch_assoc()) {
+                // every 3 products start a new row
 				if($i % 3 == 1) {
 					echo "<div class='row product-row padding-top-30 padding-bottom-30'>";
 				}
@@ -88,12 +91,14 @@ input[type=number]::-webkit-inner-spin-button {
                 echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
                 echo "<p class='col-md-10'><strong>Location:</strong> " . getProductLocation($row['product_location']) . "</p>";
                 echo "<p class='col-md-10'><strong>Wasser:</strong> " . getProductWaterConsumption($row['water_consumption']) . "</p>";
-				echo "<p class='col-md-11 prise-col'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
+                echo "<p class='col-md-11 prise-col'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
+                // add to cart button with data : product name, Product prise
 				echo "<div class='col-md-7 cart-btn-holder'>";
 				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
 				echo "</div><!-- /.cart-btn-holder -->";
 				echo "</div></div><!-- /.product-box-parent -->";
 
+                // every 3 products end current row
 				if($i % 3 == 0 || $i == $result->num_rows) {
 					echo "</div> <!-- /.product-row -->";
 				}
@@ -152,7 +157,7 @@ input[type=number]::-webkit-inner-spin-button {
         return $value;
     }
     ?>
-        
+        <!-- check if the product side bar is created and show it with shopping cart   -->
     <?php if ( is_active_sidebar( 'sidebar-product' ) ) : ?>
     <?php dynamic_sidebar( 'sidebar-product' ); ?>
     <?php endif; ?>

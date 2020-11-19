@@ -105,7 +105,10 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'heropress_add_to_cart_fragment
 require( get_stylesheet_directory() . '/inc/customize/heropress-premium.php');
 
 
-/* add the product with the Shop cart widget SideBar */
+
+
+/* add the product with the Shop cart widget SideBar
+created by Nagham Nader, ?? */
 function product_sidebar() {
     register_sidebar(
         array (
