@@ -1,3 +1,13 @@
+<?php
+/**
+ * @package MulkeProduktManagmentPlugin
+ */
+/*
+Description: html layout to show the product add view )
+Author: Nagham Nader , ?? 
+*/
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -28,10 +38,10 @@
 
     <fieldset>
     
-    <!-- Neue Produk Form  -->
+    <!-- Neue Produkt Form  -->
     <legend>Neue Produkt</legend>
     
-    <!-- Produkt NameText input-->
+    <!-- Produkt Name Text input-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_name">Produkt Name</label>  
       <div class="col-md-4">
@@ -140,6 +150,7 @@
     </div>
     
     <!-- Produkt Prise Text input-->
+    <!-- hier wird beachtet, nur zahlen und kommas-->
     <div class="form-group">
       <label class="col-md-4 control-label" for="product_price">Produkt Prise</label>  
       <div class="col-md-4">
@@ -148,7 +159,9 @@
         
       </div>
     </div>
+
      <!-- Verfügbare Menge Text input-->
+     <!-- hier wird beachtet, nur zahlen und kommas-->
      <div class="form-group">
       <label class="col-md-4 control-label" for="available_quantity">Verfügbare Menge</label>  
       <div class="col-md-4">
@@ -156,7 +169,9 @@
         
       </div>
     </div>
+    
     <!-- Submit Button -->
+    <!-- when button is clicked, javascript will call the save product function -->
     <input class="btn btn-primary" type="button"  type="submit" name = "submit"  value="submit" id="saveproduct">
     
     </fieldset>

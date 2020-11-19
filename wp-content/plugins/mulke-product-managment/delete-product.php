@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package MulkeProduktManagmentPlugin
+ */
+/*
+Description: php statement to delete products -> will be called with ajax request )
+Author: Nagham Nader , ?? 
+*/
 include 'db-connection.php';
 
 

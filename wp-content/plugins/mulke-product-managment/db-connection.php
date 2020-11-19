@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package MulkeProduktManagmentPlugin
+ */
+/*
+Description: connect plugin to database to make db querys )
+Author: Nagham Nader , ?? 
+*/
 
 $servername = "localhost";
 $username = "root";

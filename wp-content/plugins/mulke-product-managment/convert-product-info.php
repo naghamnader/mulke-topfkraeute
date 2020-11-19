@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package MulkeProduktManagmentPlugin
+ */
+/*
+Description: php functions to convert location, water enum )
+Author: Nagham Nader , ?? 
+*/
  function getProductLocation($key) {
           $value = "";
           switch($key){

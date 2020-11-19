@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package MulkeProduktManagmentPlugin
+ */
+/*
+Description: php statement to save products -> will be called with ajax request )
+Author: Nagham Nader , ?? 
+*/
 	include 'db-connection.php';
 	
     $name = $_POST['name'];
