@@ -173,7 +173,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                   <label class='col-md-4 control-label' for='product_img'>Produkt Bild Url</label>  
                 <div class='col-md-10'>
-                  <input id='product_img' name='product_img' type='text' placeholder='Produkt Bild Url' class='form-control input-md' >
+                  <input id='product_img' name='product_img' type='text' value='" . $row['product_img'] . "' class='form-control input-md' >
                   
                 </div>
               </div>
@@ -182,7 +182,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                 <label class='col-md-4 control-label' for='product_usage'>Produkt Verwendung</label>  
                 <div class='col-md-10'>
-                <input id='product_usage' name='product_usage' type='text' placeholder='Produkt Verwendung' class='form-control input-md'>
+                <input id='product_usage' name='product_usage' type='text' value='" . $row['product_usage'] . "' class='form-control input-md'>
                   
                 </div>
               </div>
@@ -197,7 +197,7 @@ if ($result->num_rows > 0) {
                 <label class='col-md-4 control-label' for='product_price'>Produkt Prise</label>  
                 <div class='col-md-10'>
                 <!-- placeholder Übersetzen-->
-                <input id='product_price' name='product_price' type='text' placeholder='Bitte die Prise cents mit '.' angebeb' class='form-control input-md' onkeypress='return isNumberKey(event)' >
+                <input id='product_price' name='product_price' type='text' value='" . $row['product_price'] . "' placeholder='Bitte die Prise cents mit '.' angebeb' class='form-control input-md' onkeypress='return isNumberKey(event)' >
                   
                 </div>
               </div>
@@ -206,7 +206,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                 <label class='col-md-4 control-label' for='available_quantity'>Verfügbare Menge</label>  
                 <div class='col-md-10'>
-                <input id='available_quantity' name='available_quantity' onkeypress='return isNumberKey(event)' placeholder='Verfügbare Menge' class='form-control input-md'> 
+                <input id='available_quantity' name='available_quantity' onkeypress='return isNumberKey(event)' value='" . $row['available_quantity'] . "' class='form-control input-md'> 
                 </div>
               </div>
 
