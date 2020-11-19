@@ -14,8 +14,10 @@
      return true;
   }
 
-  function setlocationValue(radiosValue){
-    jQuery("input[name=product_location_edit][value=" + radiosValue + "]").prop('checked', true);
+  function setlocationValue(radiosValue , productid){
+    jQuery("input[name=product_location_edit" + productid + "][value=" + radiosValue + "]").prop('checked', true);
+
+  }
 
   }
 
