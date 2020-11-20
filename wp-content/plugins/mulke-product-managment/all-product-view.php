@@ -91,7 +91,7 @@ if ($result->num_rows > 0) {
             <div class='form-group'>
               <label class='col-md-4 control-label' for='product_name'>Produkt Name</label>  
               <div class='col-md-4'>
-              <input id='product_name' name='product_name' type='text' value='" . $row['product_name'] . "' class='form-control input-md' >
+              <input id='product_name" . $row['id'] . "' name='product_name' type='text' value='" . $row['product_name'] . "' class='form-control input-md' >
                 
               </div>
             </div>
@@ -173,7 +173,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                   <label class='col-md-4 control-label' for='product_img'>Produkt Bild Url</label>  
                 <div class='col-md-10'>
-                  <input id='product_img' name='product_img' type='text' value='" . $row['product_img'] . "' class='form-control input-md' >
+                  <input id='product_img" . $row['id'] . "' name='product_img' type='text' value='" . $row['product_img'] . "' class='form-control input-md' >
                   
                 </div>
               </div>
@@ -182,7 +182,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                 <label class='col-md-4 control-label' for='product_usage'>Produkt Verwendung</label>  
                 <div class='col-md-10'>
-                <input id='product_usage' name='product_usage' type='text' value='" . $row['product_usage'] . "' class='form-control input-md'>
+                <input id='product_usage" . $row['id'] . "' name='product_usage' type='text' value='" . $row['product_usage'] . "' class='form-control input-md'>
                   
                 </div>
               </div>
@@ -197,7 +197,7 @@ if ($result->num_rows > 0) {
                 <label class='col-md-4 control-label' for='product_price'>Produkt Prise</label>  
                 <div class='col-md-10'>
                 <!-- placeholder Übersetzen-->
-                <input id='product_price' name='product_price' type='text' value='" . $row['product_price'] . "' placeholder='Bitte die Prise cents mit '.' angebeb' class='form-control input-md' onkeypress='return isNumberKey(event)' >
+                <input id='product_price" . $row['id'] . "' name='product_price' type='text' value='" . $row['product_price'] . "' placeholder='Bitte die Prise cents mit '.' angebeb' class='form-control input-md' onkeypress='return isNumberKey(event)' >
                   
                 </div>
               </div>
@@ -206,7 +206,7 @@ if ($result->num_rows > 0) {
               <div class='form-group col-md-5'>
                 <label class='col-md-4 control-label' for='available_quantity'>Verfügbare Menge</label>  
                 <div class='col-md-10'>
-                <input id='available_quantity' name='available_quantity' onkeypress='return isNumberKey(event)' value='" . $row['available_quantity'] . "' class='form-control input-md'> 
+                <input id='available_quantity" . $row['id'] . "' name='available_quantity' onkeypress='return isNumberKey(event)' value='" . $row['available_quantity'] . "' class='form-control input-md'> 
                 </div>
               </div>
 
@@ -218,7 +218,7 @@ if ($result->num_rows > 0) {
               <!-- Update Button -->
 
               <div class='col-md-5 '>
-                <input class='btn btn-primary float-right' type='button'  type='submit' name = 'submit'  value='submit' id='updateproduct'>
+                <input class='btn btn-primary float-right' type='button'  onclick='updateProduct(" . $row['id'] . ")'   value='submit' id='updateproduct'>
               </div>
 
               <!-- Cancel Button -->

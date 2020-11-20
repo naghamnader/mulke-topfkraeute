@@ -155,3 +155,54 @@ function deleteProduct(productId)
      //cancel function
     , function(){ return;});   */ 
   }
+
+  function updateProduct(productId){
+     // get product infos from unser input
+		var name = jQuery('#product_name'+ productId).val();
+    var productLocation = parseInt(jQuery("input[name='product_location_edit" + productId+ "']:checked").val())|| 0;
+    var waterConsumption = parseInt(jQuery("input[name='water_consumption_edit" + productId+ "']:checked").val())|| 0;
+		var productImg = jQuery('#product_img'+ productId).val();
+		var productUsage = jQuery('#product_usage'+ productId).val();
+    var productPrice = parseFloat(jQuery('#product_price'+ productId).val())|| 0;
+    var availableQuantity = parseInt(jQuery('#available_quantity'+ productId).val())|| 0;
+
+
+    console.log("blabla");
+    console.log(name +" "+ productLocation +" "+ waterConsumption +" "+ productImg +" "+ productUsage +" "+ productPrice +" "+ availableQuantity);
+    // validation -> string , int, empty, null ...
+   /*  if(checkDataValidation(name, productImg, productUsage, waterConsumption,
+        productLocation, availableQuantity, productPrice)){
+          //send ajax post request to save-mulke-product.php with all product info
+            jQuery.ajax({
+          url: pluginUrl + "/mulke-product-managment/save-mulke-product.php",
+				type: "POST",
+				data: {
+					name: name,
+					productLocation: productLocation,
+					waterConsumption: waterConsumption,
+          productImg: productImg,
+					productUsage: productUsage,
+					productPrice: productPrice,
+					availableQuantity: availableQuantity,
+			
+				},
+        cache: false,
+				success: function(dataResult){
+          var dataResult = JSON.parse(dataResult);
+          // if success show success alert and reload page
+					if(dataResult.statusCode==200){
+            alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
+          }
+          
+					else if(dataResult.statusCode==201){
+            alertify.alert('Add product', 'something is not valid!', function(){ location.reload(false); });
+					}
+					
+				}
+			});
+
+    }else{
+      alertify.alert('Add product', 'something is not valid!');
+      
+    } */
+  }
