@@ -103,3 +103,23 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'heropress_add_to_cart_fragment
  * Called Premium Themes
  */
 require( get_stylesheet_directory() . '/inc/customize/heropress-premium.php');
+
+
+
+
+/* add the product with the Shop cart widget SideBar
+created by Nagham Nader, ?? */
+function product_sidebar() {
+    register_sidebar(
+        array (
+            'name' => __( 'Product Sidebar Widget Area', 'specia' ),
+            'id' => 'sidebar-product',
+            'description' => __( 'Product Sidebar Widget Area', 'specia' ),
+            'before_widget' => '<div class="widget-content col-md-3"><div class="sidebar"><aside id="%1$s" class="widget">',
+            'after_widget' => "</aside></div></div>",
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3><div class="title-border"></div>',
+        )
+    );
+}
+add_action( 'widgets_init', 'product_sidebar' );

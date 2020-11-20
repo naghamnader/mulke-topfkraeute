@@ -1,5 +1,11 @@
 <?php
-
+/**
+ * @package mulke-theme
+ */
+/*
+Description: connect theme product Template to database to make db querys )
+Author: Nagham Nader , ?? 
+*/
 $servername = "localhost";
 $username = "root";
 $password = "root";

@@ -27,6 +27,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
 body img {
     width: 100%;
 }
+/* repair the cart image within shopping cart **/
+.shopping_cart img{
+    width: auto;
+}
 
 .navbar-brand, .site-title a, .site-description {
     color: #202e31 !important

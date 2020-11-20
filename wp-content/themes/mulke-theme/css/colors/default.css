@@ -3,154 +3,154 @@
 =========================================*/
 /* Header CSS */
 .header-top-info-3 .social li a i:hover {
-    background: #008000;
+    background: #62bb49;
 }
 
 /* Menu CSS */
 .navbar-brand::first-letter {
-	color: #008000 !important;
+	color: #62bb49 !important;
 }
 .navbar-default .navbar-nav>.active > a, .navbar-default .navbar-nav>.active>a:hover, .dropdown-menu > .active > a {
-    background: #008000 !important;
+    background: #62bb49 !important;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
-    color: #008000 !important;
+    color: #62bb49 !important;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-    background: #008000 !important;
+    background: #62bb49 !important;
 }
 
 /* Slider CSS */
 .slider-version-three .caption h1 span{
-    color: #008000;
+    color: #62bb49;
 }
 .specia-btn-3:hover{
-    background: #008000;
-	border-color: #008000;
+    background: #62bb49;
+	border-color: #62bb49;
 }
 .owl-theme .owl-controls .owl-nav [class*=owl-]:hover {
-    background: #008000;
+    background: #62bb49;
 }
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-    background: #008000;
+    background: #62bb49;
 }
 
 /* Service CSS */
 .section-heading span{
-    color: #008000;
+    color: #62bb49;
 }
 .hero-service-box:hover { 
-	background-color: #008000;
+	background-color: #62bb49;
 }
 .hero-service-box > i {
-	color: #008000;
+	color: #62bb49;
 }
 .hero-service-image:hover > h3 a {
-	color: #008000;
+	color: #62bb49;
 }
 .hero-service-image:hover > a {
-	border: solid 1px #008000;
-	background-color: #008000;
+	border: solid 1px #62bb49;
+	background-color: #62bb49;
 }
 .hero-service-color:hover > a {
-	color: #008000;
+	color: #62bb49;
 }
 
 /* Cal Action CSS */
 .call-to-action-three .call-btn-3:hover {
-    background: #008000;
-	border-color: #008000;
+    background: #62bb49;
+	border-color: #62bb49;
 }
 
 /* Service Section CSS */
 .service-version-one .service-icon-box i:hover {
-    background: #008000;
+    background: #62bb49;
 }
 .specia-icon-effect-1 .specia-icon:after {
-	box-shadow: 0 0 0 4px #008000;
+	box-shadow: 0 0 0 4px #62bb49;
 }
 .specia-icon-effect-5 .specia-icon:hover {
-	box-shadow: 0 0 0 4px #008000;
+	box-shadow: 0 0 0 4px #62bb49;
 }
 .specia-icon-effect-6 .specia-icon:hover {
-	box-shadow: 0 0 0 4px #008000;
+	box-shadow: 0 0 0 4px #62bb49;
 }
 .specia-icon-effect-8 .specia-icon:hover {
-	background: #008000;
+	background: #62bb49;
 }
 /* Features Section CSS */
 .features-version-one h2 span{
-    color: #008000;
+    color: #62bb49;
 }
 .features-version-one .feature-box-info h4{
-    color: #008000;
+    color: #62bb49;
 }
 
 /* Latest Blog Section CSS */
 .blog-version-1 article:hover footer.entry-footer, .post_date{
-     background: #008000;
+     background: #62bb49;
 }
 .entry-content .more-link:hover {
-    background: #008000;
-	border: solid 2px #008000;
+    background: #62bb49;
+	border: solid 2px #62bb49;
 }
 
 /* Footer Section CSS */
 .footer-sidebar .widget .title-border { 
-    border-bottom: 2px solid #008000;
+    border-bottom: 2px solid #62bb49;
 }
 .widget table #next a, .widget table #prev a { 
-	color: #008000; font-weight: 600; 
+	color: #62bb49; font-weight: 600; 
 }
 .footer-sidebar  .widget ul li a:hover, .widget ul li a:active { 
-    color: #008000; 
+    color: #62bb49; 
 }
 .footer-sidebar .widget input[type="submit"]:hover{
-    background: #008000;
-    border-color: #008000;
+    background: #62bb49;
+    border-color: #62bb49;
 }
 .footer-sidebar .tagcloud a:hover, .tagcloud a:focus {  
-    border: 1px solid #008000;
-    background: #008000;
+    border: 1px solid #62bb49;
+    background: #62bb49;
 }  
 
 /* Copyright Content */
 .payment-icon li a:hover{
-    color: #008000;
+    color: #62bb49;
 }
 .footer-copyright p a:hover{
-    color: #008000;
+    color: #62bb49;
 }
 .top-scroll {
-    border-color: #008000;
-    color: #008000;
+    border-color: #62bb49;
+    color: #62bb49;
 }
 
 /* Pagination CSS */
 .paginations a:hover, .paginations a:focus, .paginations a.active, span.page-numbers.current {
-    border: 1px solid #008000;
-    background-color: #008000;
+    border: 1px solid #62bb49;
+    background-color: #62bb49;
 }
 
 /* Blog Page CSS */
 .page-wrapper article:hover footer.entry-footer {
-     background: #008000;
+     background: #62bb49;
 }
 .comment-reply-title {
-    border-top: 4px solid #008000;
+    border-top: 4px solid #62bb49;
 }
 .required {
-    color: #008000;
+    color: #62bb49;
 }
 a.comment-reply-link {
-    color: #008000;
+    color: #62bb49;
 }
 
 /* Error Page CSS */
 .error-page h1{
-    color: #008000;
+    color: #62bb49;
 }
 
 /* Form Element CSS */
@@ -158,13 +158,13 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-    background: #008000;
-    border: solid 2px #008000;
+    background: #62bb49;
+    border: solid 2px #62bb49;
 }
 
 /* Breadcrumb CSS */
 .page-breadcrumb a{
-    color: #008000;
+    color: #62bb49;
 }
 
 /*Sidebar Area CSS */
@@ -180,26 +180,26 @@ input[type="submit"]:hover {
 }
 /* Typography */
 blockquote { 
-    border-left: 5px solid #008000 !important;
+    border-left: 5px solid #62bb49 !important;
 }
 table th {     
-    border: 1px solid #008000;
-    background: #008000;
+    border: 1px solid #62bb49;
+    background: #62bb49;
 }
 em, cite, q { 
-	color: #008000;
+	color: #62bb49;
 }
 s, strike, del { 
-	color: #008000; 
+	color: #62bb49; 
 }
 h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-    color: #008000;
+    color: #62bb49;
 }
 body a {
-    color: #008000;
+    color: #62bb49;
 }
 body a:focus, body a:hover {
-    color: #008000;
+    color: #62bb49;
 }
 
 /* Form */
@@ -211,13 +211,13 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-    background: #008000;
-    border: solid 2px #008000;
+    background: #62bb49;
+    border: solid 2px #62bb49;
 }
 
 /* WooCommerce */
 .heropress-cart a.cart-icon span {
-    background: #008000;
+    background: #62bb49;
 }
 .woocommerce a.button:hover, 
 .woocommerce button.button.alt:hover, 
@@ -227,45 +227,45 @@ input[type="submit"]:active {
 .woocommerce-cart table.cart input.button:hover,
 .woocommerce input.button:hover,
 .woocommerce button.button:hover {
-	background: #008000;
-    border: solid 2px #008000;
+	background: #62bb49;
+    border: solid 2px #62bb49;
 }
 .woocommerce nav.woocommerce-pagination ul li span.current {
-	background: #008000;
-	border: solid 1px #008000;
+	background: #62bb49;
+	border: solid 1px #62bb49;
 }
 .woocommerce nav.woocommerce-pagination a.page-numbers:hover {
-	background: #008000;
+	background: #62bb49;
 }
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
-	background: #008000;
-    border: solid 2px #008000;
+	background: #62bb49;
+    border: solid 2px #62bb49;
 }
 .woocommerce p.stars a {
-	color: #008000;
+	color: #62bb49;
 }
 .woo-sidebar .widget .title-border { 
-    border-bottom: 2px solid #008000;
+    border-bottom: 2px solid #62bb49;
 }
 .woocommerce a.remove:hover {
-	background: #008000;
+	background: #62bb49;
 }
 .price_slider_wrapper .ui-slider .ui-slider-handle {
-    border: 5px solid #008000;
+    border: 5px solid #62bb49;
 }
 .price_slider_wrapper .ui-slider .ui-slider-range {
-  background: #008000;
+  background: #62bb49;
 }
 .woocommerce-MyAccount-navigation ul li.is-active {
-	background: #008000;
+	background: #62bb49;
 }
 .page-wrapper .posts-navigation a:hover {
-    background: #008000;
-	border: 2px solid #008000;
+    background: #62bb49;
+	border: 2px solid #62bb49;
 }
 
 .bg-sticky {
-    background: #008000;
+    background: #62bb49;
 }
 
 /* --------------------------------------
@@ -359,21 +359,21 @@ input[type="submit"] {
 
 /*Sidebar Area CSS */
 .sidebar .widget ul li a:hover, .widget ul li a:active { 
-    color: #008000; 
+    color: #62bb49; 
 }
 .sidebar .widget table tbody a {
-    color: #008000;
+    color: #62bb49;
 }
 .sidebar .widget input[type="submit"]:hover{
-    background: #008000;
-    border-color: #008000;
+    background: #62bb49;
+    border-color: #62bb49;
 }
 .sidebar .tagcloud a:hover, .tagcloud a:focus {  
-    border: 1px solid #008000;
-    background: #008000;
+    border: 1px solid #62bb49;
+    background: #62bb49;
 } 
 .sidebar .widget .title-border { 
-    border-bottom: 2px solid #008000;
+    border-bottom: 2px solid #62bb49;
 }
 
 /* Typography */

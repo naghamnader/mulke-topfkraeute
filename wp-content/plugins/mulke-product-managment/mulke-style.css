@@ -1,0 +1,27 @@
+
+/* 
+@package MulkeProduktManagmentPlugin
+Description: style all product view , add product view layouts )
+Author: Nagham Nader , ?? 
+ */
+
+
+/* center text in all product table */
+td, th{
+    vertical-align: middle!important;
+}
+
+/* image width in all product table */
+td, img {
+  width: 200px;
+  height: 150px;
+}
+
+/* hide product edit form till user click edit icon */
+.product-edit-form{
+  display: none;
+}
+
+.gray-bg {
+  background-color: #F0F0F0;
+}
