@@ -223,7 +223,7 @@ if ($result->num_rows > 0) {
 
               <!-- Cancel Button -->
               <div class='col-md-5'>
-                <input class='btn btn-danger' type='button'  type='cancel' name = 'cancel'  value='cancel' id='cancelupdate'>
+                <input class='btn btn-danger' type='button'  onclick='window.location.reload();' name = 'cancel'  value='cancel'>
               </div>
 
             </div>
