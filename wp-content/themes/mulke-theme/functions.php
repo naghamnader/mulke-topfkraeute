@@ -115,7 +115,7 @@ function product_sidebar() {
             'name' => __( 'Product Sidebar Widget Area', 'specia' ),
             'id' => 'sidebar-product',
             'description' => __( 'Product Sidebar Widget Area', 'specia' ),
-            'before_widget' => '<div class="widget-content col-md-3"><div class="sidebar"><aside id="%1$s" class="widget">',
+            'before_widget' => '<div class="widget-content col-md-3 padding-top-30"><div class="sidebar"><aside id="%1$s" class="widget">',
             'after_widget' => "</aside></div></div>",
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3><div class="title-border"></div>',
