@@ -79,7 +79,7 @@
 	});
 });
 
-  //check if all user inputs not null and valid to use in db
+  //check if all user inputs not null and valid to use in db , amount null -> over lay ausverkauft
   function checkDataValidation(name, productImg, productUsage, waterConsumption,
     productLocation, availableQuantity, productPrice){
 
@@ -88,7 +88,7 @@
     || typeof(productUsage) != "string" || productUsage === ""
     || typeof(productLocation) != "number" || productLocation === 0
     || typeof(waterConsumption) != "number" || waterConsumption === 0
-    || typeof(availableQuantity) != "number" || availableQuantity === 0
+    || typeof(availableQuantity) != "number" || availableQuantity < 0
     || typeof(productPrice) != "number" || productPrice ===0){
     return false;
     }
