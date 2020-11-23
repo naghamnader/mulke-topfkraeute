@@ -3,8 +3,8 @@
  * @package MulkeProduktManagmentPlugin
  */
 /*
-Description: php statement to update products -> will be called with ajax request )
-Author: Nagham Nader , ?? 
+Description: PHP-Statement, um Produkt zu bearbeiten -> wird durch AJAX-anfrage aufgerufen
+Author: Nagham Nader
 */
 include 'db-connection.php';
     

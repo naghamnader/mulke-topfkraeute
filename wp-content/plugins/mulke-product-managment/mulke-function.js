@@ -1,9 +1,9 @@
   
-  /* Description: all JS method used in the mulke Plugin )
-    Author: Nagham Nader , ?? 
+  /* Description: alle Javascript methoden, welche in diesem Plugin genutzt werden
+    Author: Nagham Nader , Daria Jarzabek
  */
 
-  // just allow number with comas 
+  // nur nummern mit Komma zulassen
   function isNumberKey(evt)
   {
      var charCode = (evt.which) ? evt.which : event.keyCode
@@ -24,11 +24,11 @@
   }
 
 
-  // add the Save product button function with ajax
+  // hinzufügen der "Hinzufügen"-Button Funktionalität mit Ajax 
   jQuery(document).ready(function() {
 	jQuery('#saveproduct').on('click', function() {
 
-    // get product infos from unser input
+    //abruf der Produktinformationen durch Nutzereingabe 
 		var name = $('#product_name').val();
     var productLocation = parseInt($("input[name='product_location']:checked").val())|| 0;
     var waterConsumption = parseInt($("input[name='water_consumption']:checked").val())|| 0;
@@ -37,10 +37,10 @@
     var productPrice = parseFloat($('#product_price').val())|| 0;
     var availableQuantity = parseInt($('#available_quantity').val())|| 0;
 
-    // validation -> string , int, empty, null ...
+    // Überprüfung von -> string , int, empty, null ...
     if(checkDataValidation(name, productImg, productUsage, waterConsumption,
         productLocation, availableQuantity, productPrice)){
-          //send ajax post request to save-mulke-product.php with all product info
+          // Sendet AJAX Post anfrage an save-mulke-produkt.php mit allen Produktinformationen
             jQuery.ajax({
           url: pluginUrl + "/mulke-product-managment/save-mulke-product.php",
 				type: "POST",
@@ -57,20 +57,20 @@
         cache: false,
 				success: function(dataResult){
           var dataResult = JSON.parse(dataResult);
-          // if success show success alert and reload page
+          // wenn erfolgreich, zeige Meldung an und lade Seite erneut
 					if(dataResult.statusCode==200){
-            alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
+            alertify.alert('Produkt hinzufügen', 'Produkt wurde erfolgreich hinzugefügt :)', function(){ location.reload(false); });
           }
           
 					else if(dataResult.statusCode==201){
-            alertify.alert('Add product', 'something is not valid!', function(){ location.reload(false); });
+            alertify.alert('Produkt hinzufügen', 'Etwas stimmt nicht, versuchen Sie es bitte noch einmal!', function(){ location.reload(false); });
 					}
 					
 				}
 			});
 
     }else{
-      alertify.alert('Add product', 'something is not valid!');
+      alertify.alert('Produkt hinzufügen', 'Eingabe fehlerhaft!');
       
     }
 
@@ -79,7 +79,7 @@
 	});
 });
 
-  //check if all user inputs not null and valid to use in db , amount null -> over lay ausverkauft
+  // Überprüft zu speichernde Werte vor übergabe an die Datenbank, wenn Produktanzahl 0 wird "Ausverkauft"-Overlay im Shop angezeigt
   function checkDataValidation(name, productImg, productUsage, waterConsumption,
     productLocation, availableQuantity, productPrice){
 
@@ -96,7 +96,7 @@
 
   }
 
-//send ajax post request to delete-product.php with product ID
+// Sendet AJAX Post anfrage an delete-product.php mit zu löschender ProduktID
 function deleteProduct(productId)
   {
 
@@ -108,28 +108,28 @@ function deleteProduct(productId)
     cache: false,
       success: function(dataResult){
           var dataResult = JSON.parse(dataResult);
-          // if success show success alert and remove deleted product from html table
+          // wenn erfolgreich, zeige Meldung an und lade Seite erneut
 					if(dataResult.statusCode==200){
-            alertify.alert('Delete product', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML="";document.getElementById("product-edit-" + productId).outerHTML=""; });
+            alertify.alert('Produkt löschen', 'Produkt wurde erfolgreich gelöscht :)', function(){ document.getElementById(productId).outerHTML="";document.getElementById("product-edit-" + productId).outerHTML=""; });
             
 					}
 					else if(dataResult.statusCode==201){
-            alertify.alert('Delete product', 'something is not valid!');
+            alertify.alert('Produkt löschen', 'Etwas stimmt nicht, bitte versuchen Sie es erneut!');
 					}
 					
 				}
      });
      }
-     //cancel function
+     //Abbrechen Funktion
     , function(){ return;});   
   }
 
-// show product edit view when user click on edit icon
+// Zeigt "Produkt bearbeiten" Form an, wenn man auf "bearbeiten"-Button klickt 
   function showEditProduct(productId)
   {
     var x = document.getElementById("product-edit-" + productId);
     if(x.style.display === "none"){
-      // hide all showen forms
+      //Verberge alle angezeigten "bearbeiten"-Formen
       var formsToHide = document.getElementsByClassName("product-edit-form")
       if (formsToHide.length > 0){
         for(var i = 0; i < formsToHide.length; i++){
@@ -147,7 +147,7 @@ function deleteProduct(productId)
   }
 
   function updateProduct(productId){
-     // get product infos from unser input
+     // Erhalte Produktinformationen durch Nutzereingabe
 		var name = jQuery('#product_name'+ productId).val();
     var productLocation = parseInt(jQuery("input[name='product_location_edit" + productId+ "']:checked").val())|| 0;
     var waterConsumption = parseInt(jQuery("input[name='water_consumption_edit" + productId+ "']:checked").val())|| 0;
@@ -157,10 +157,10 @@ function deleteProduct(productId)
     var availableQuantity = parseInt(jQuery('#available_quantity'+ productId).val())|| 0;
 
 
-    // validation -> string , int, empty, null ...
+    // Überprüfung von -> string , int, empty, null ...
     if(checkDataValidation(name, productImg, productUsage, waterConsumption,
         productLocation, availableQuantity, productPrice)){
-          //send ajax post request to save-mulke-product.php with all product info
+          // Sendet AJAX Post anfrage an save-mulke-product.php mit zu speichernden Produktinformationen
             jQuery.ajax({
           url: pluginUrl + "/mulke-product-managment/update-product.php",
 				type: "POST",
@@ -178,20 +178,20 @@ function deleteProduct(productId)
         cache: false,
 				success: function(dataResult){
           var dataResult = JSON.parse(dataResult);
-          // if success show success alert and reload page to update content
+          // wenn erfolgreich, zeige Meldung an und lade Seite erneut mit neuem Inhalt
 					if(dataResult.statusCode==200){
-            alertify.alert('Update product', 'Produkt wurde erfolgreich geupdatet :)', function(){ location.reload(false); });
+            alertify.alert('Produkt bearbeiten', 'Produkt wurde erfolgreich bearbeitet :)', function(){ location.reload(false); });
           }
           
 					else if(dataResult.statusCode==201){
-            alertify.alert('Update product', 'something is not valid!', function(){ location.reload(false); });
+            alertify.alert('Produkt bearbeiten', 'Etwas stimmt nicht, bitte versuchen Sie es erneut!', function(){ location.reload(false); });
 					}
 					
 				}
 			});
 
     }else{
-      alertify.alert('Update product', 'something is not valid!');
+      alertify.alert('Produkt bearbeiten', 'Eingabe fehlerhaft!');
       
     }
   }

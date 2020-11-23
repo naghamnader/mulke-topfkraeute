@@ -3,8 +3,8 @@
  * @package MulkeProduktManagmentPlugin
  */
 /*
-Description: html layout to show the product add view )
-Author: Nagham Nader , ?? 
+Description: HTML Layout um "Produkt hinzufügen"-Ansicht anzuzeigen
+Author: Nagham Nader , Christopher Schwarz 
 */
 ?>
 
@@ -38,14 +38,14 @@ Author: Nagham Nader , ??
 
     <fieldset>
     
-    <!-- Neue Produkt Form  -->
-    <legend>Neue Produkt</legend>
+    <!-- Neues Produkt Form  -->
+    <legend>Neues Produkt</legend>
     
     <!-- Produkt Name Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="product_name">Produkt Name</label>  
+      <label class="col-md-4 control-label" for="product_name">Produktname</label>  
       <div class="col-md-4">
-      <input id="product_name" name="product_name" type="text" placeholder="Produkt Name" class="form-control input-md" required="">
+      <input id="product_name" name="product_name" type="text" placeholder="Produktname" class="form-control input-md" required="">
         
       </div>
     </div>
@@ -84,7 +84,7 @@ Author: Nagham Nader , ??
     
     <!-- Wasser Verbrauch Multiple Radios -->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="water_consumption">Wasser Verbrauch</label>
+      <label class="col-md-4 control-label" for="water_consumption">Wasserverbrauch</label>
       <div class="col-md-4">
       <div class="radio">
         <label for="water_consumption_0">
@@ -142,20 +142,20 @@ Author: Nagham Nader , ??
 
     <!-- Produkt Verwendung Text input-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="product_usage">Produkt Verwendung</label>  
+      <label class="col-md-4 control-label" for="product_usage">Verwendungszweck</label>  
       <div class="col-md-4">
-      <input id="product_usage" name="product_usage" type="text" placeholder="Produkt Verwendung" class="form-control input-md">
+      <input id="product_usage" name="product_usage" type="text" placeholder="Verwendungszweck" class="form-control input-md">
         
       </div>
     </div>
     
-    <!-- Produkt Prise Text input-->
+    <!-- Produktpreis Text input-->
     <!-- hier wird beachtet, nur zahlen und kommas-->
     <div class="form-group">
-      <label class="col-md-4 control-label" for="product_price">Produkt Prise</label>  
+      <label class="col-md-4 control-label" for="product_price">Preis</label>  
       <div class="col-md-4">
       <!-- placeholder Übersetzen-->
-      <input id="product_price" name="product_price" type="text" placeholder="Bitte die Prise cents mit '.' angebeb" class="form-control input-md" onkeypress="return isNumberKey(event)" >
+      <input id="product_price" name="product_price" type="text" placeholder="Bitte den Betrag mit '.' angeben" class="form-control input-md" onkeypress="return isNumberKey(event)" >
         
       </div>
     </div>
@@ -171,8 +171,8 @@ Author: Nagham Nader , ??
     </div>
     
     <!-- Submit Button -->
-    <!-- when button is clicked, javascript will call the save product function -->
-    <input class="btn btn-primary" type="button"  type="submit" name = "submit"  value="submit" id="saveproduct">
+    <!-- Wenn Button geklickt wird, ruft javascript die save product Funktion auf -->
+    <input class="btn btn-primary" type="button"  type="submit" name = "submit"  value="Hinzufügen" id="saveproduct">
     
     </fieldset>
     </form>
