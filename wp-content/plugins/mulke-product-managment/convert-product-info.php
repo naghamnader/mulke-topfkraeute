@@ -3,8 +3,8 @@
  * @package MulkeProduktManagmentPlugin
  */
 /*
-Description: php functions to convert location, water enum )
-Author: Nagham Nader , ?? 
+Description: PHP Funktionen zum konvertieren der Produktstandorte und des Verbrauchs, Zahl gegen Text
+Author: Christopher Schwarz , Daria Jarzabek
 */
  function getProductLocation($key) {
           $value = "";

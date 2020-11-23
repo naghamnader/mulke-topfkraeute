@@ -18,7 +18,7 @@ body {
   }
   .product-row{
   
-      /** same height for all columns */
+      /** gleiche Höhe aller Boostrap columns */
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
