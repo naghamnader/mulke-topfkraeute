@@ -1,6 +1,6 @@
 <?php
-/* Description: show all product in box view and sidebar with shopping cart )
-Author: Nagham Nader , ??  */
+/* Description: Zeigt alle Produkte im Shop und den Warenkorb an der Seite an. 
+Author: Nagham Nader , Daria Jarzabek  */
 /**
 Template Name: Produkt Template
 */
@@ -11,7 +11,7 @@ get_header();
 <section class="page-wrapper">
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-<!-- To prevent forms from submitting again when refreshing the page // double pay, etc  -->
+<!-- Verhindert die erneute Erstellung von Formen beim aktualisieren der Seite, Doppelte Zahlungen,etc  -->
 <script>
     if ( window.history.replaceState ) {
         window.history.replaceState( null, null, window.location.href );
@@ -28,7 +28,7 @@ get_header();
         <?php 
         include "convert-product-info.php";
         include "mulke-db-connection.php";
-        //show saved produkte
+        //gespeicherte Produkte anzeigen
             $sql = "SELECT * FROM mulke_product";
             $result = $conn->query($sql);
             if (!$result) {
@@ -37,9 +37,9 @@ get_header();
             echo "<div class='col-md-9'>";
             if ($result->num_rows > 0) {
 				$i = 1;
-            // output data of each row and list all products in styled boxes
+            // Listet alle Produkte in gestlyten Boxen auf
             while($row = $result->fetch_assoc()) {
-                // every 3 products start a new row
+                // Erstellung einer neuen Boostrap Row nach jedem 3. Produkt
 				if($i % 3 == 1) {
 					echo "<div class='row product-row padding-top-30 padding-bottom-30'>";
                 }
@@ -50,11 +50,11 @@ get_header();
                 }
                 echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div><!-- /.img-holder -->";
                 echo "<h3 class='col-md-10'><strong>" . $row['product_name'] . "</strong></h3>";
-                echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
-                echo "<p class='col-md-10'><strong>Location:</strong> " . getProductLocation($row['product_location']) . "</p>";
+                echo "<p class='col-md-10'><strong>Verwendung:</strong> " . $row['product_usage'] . "</p>";
+                echo "<p class='col-md-10'><strong>Standort:</strong> " . getProductLocation($row['product_location']) . "</p>";
                 echo "<p class='col-md-10'><strong>Wasser:</strong> " . getProductWaterConsumption($row['water_consumption']) . "</p>";
-                echo "<p class='col-md-11 prise-col'><strong>Prise:</strong> " . $row['product_price'] . " &#8364;</p>";
-                // add to cart button with data : product name, Product prise
+                echo "<p class='col-md-11 prise-col'><strong>Preis:</strong> " . $row['product_price'] . " &#8364;</p>";
+                // Anzeige des "Zum Warenkorb hinzufügen"-Buttons mit Name und Preis des Produktes
 				echo "<div class='col-md-7 cart-btn-holder'>";
 				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
                 echo "</div><!-- /.cart-btn-holder -->";
@@ -63,7 +63,7 @@ get_header();
                 }
                 echo "</div></div><!-- /.product-box-parent -->";
 
-                // every 3 products end current row
+                // Beendung der aktuellen Boostrap Row nach 3 Produkten
 				if($i % 3 == 0 || $i == $result->num_rows) {
 					echo "</div> <!-- /.product-row -->";
 				}
@@ -76,7 +76,7 @@ get_header();
             }
             $conn->close();
     ?>
-        <!-- check if the product side bar is created and show it with shopping cart   -->
+        <!-- Überprüfung der Produkt-Sidebar, ist sie Vorhanden wird der Warenkorb angezeigt  -->
     <?php if ( is_active_sidebar( 'sidebar-product' ) ) : ?>
     <?php dynamic_sidebar( 'sidebar-product' ); ?>
     <?php endif; ?>

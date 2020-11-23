@@ -5,7 +5,7 @@
  */
 /*
 Plugin Name: Mulke Produkt Managment Plugin
-Description: Dies ist ein Plugin zur Verwaltung der Mulke Topfkreatuer Produkte (Hinzufügen, Editieren, Löschen)
+Description: Dies ist ein Plugin zur Verwaltung der Mulke Topfkraeuter Produkte (Hinzufügen, Editieren, Löschen)
 Author: Nagham Nader
 */
 
@@ -50,7 +50,7 @@ register_deactivation_hook(__FILE__, array(
     'deactivate'
 ));
 
-// plugins setup function -> add the plugin items to Wordpress admin menu (all products, add products)
+// plugins setup function -> Hinzufügen des Plugins in das Wordpress Admin Menü(alle Produkte, Produkt hinzufügen)
 add_action('admin_menu', 'mulke_management_plugin_setup_menu');
 function mulke_management_plugin_setup_menu()
 {
@@ -60,13 +60,13 @@ function mulke_management_plugin_setup_menu()
     add_submenu_page('mulke_Produkt_managment', 'Add Produkt', 'Add Produkt', 'manage_options', 'mulke_add_produkt_item', 'open_add_produkt');
 }
 
-// open all products View
+// Öffnet "Alle Produkte"-Ansicht
 function open_plugin_home()
 {
     include 'all-product-view.php';
 }
 
-// open add product View
+// Öffnet "Produkt hinzufügen"-Ansicht
 function open_add_produkt()
 {
     

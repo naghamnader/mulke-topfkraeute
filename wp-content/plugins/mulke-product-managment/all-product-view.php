@@ -3,8 +3,8 @@
  * @package MulkeProduktManagmentPlugin
  */
 /*
-Description: html layout to show all products in database with edit and delete button)
-Author: Nagham Nader , ?? 
+Description: HTML Layout, um alle Produkte aus der Datenbank mit "bearbeiten"- und "Löschen"-Button darzustellen 
+Author: Nagham Nader , Christopher Schwarz 
 */
 ?>
 
@@ -37,12 +37,12 @@ Author: Nagham Nader , ??
     <tr>
       <!--Product infos head-->
       <th class="product-id">#</th>
-      <th class="product-name">Produkt Name</th>
+      <th class="product-name">Produktname</th>
       <th class="product-location">Produkt Standort</th>
-      <th class="water-consumption">Wasser Verbrauch</th>
+      <th class="water-consumption">Wasserverbrauch</th>
       <th class="product-img align-middle">Produkt Bild</th>
-      <th class="product-usage">Produkt Verwendung</th>
-      <th class="product-price">Produkt Prise</th>
+      <th class="product-usage">Verwendungszweck</th>
+      <th class="product-price">Preis</th>
       <th class="available-quantity">Verfügbare Menge</th>
       <th class="edit-column"></th>
       <th class="delete-column"></th>
@@ -54,14 +54,14 @@ Author: Nagham Nader , ??
   <?php
 include "convert-product-info.php";
 include "db-connection.php";
-//show all products from database
+//Alle Produkte der Datenbank anzeigen
 $sql    = "SELECT * FROM mulke_product";
 $result = $conn->query($sql);
 if (!$result) {
     trigger_error('Invalid query: ' . $conn->error);
 }
 if ($result->num_rows > 0) {
-    // output data of each row to fill the table with products infos
+    //Datenausgabe jedes Produktes, um Tabelle mit Informationen zu füllen 
     while ($row = $result->fetch_assoc()) {
         echo "<tr id ='" . $row['id'] . "'>";
         echo "<td>" . $row['id'] . "</td>";
@@ -74,29 +74,29 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['available_quantity'] . "</td>";
         echo "<td><button type='button'class='btn btn-secondary' onclick='showEditProduct(" . $row['id'] . ")' ><i class='far fa-edit'></i>
             </button></td>";
-        //java script delete function
+        //"Löschen"-Button mit javascript Funktion
         echo "<td><button type='button' onclick='deleteProduct(" . $row['id'] . ")' class='btn btn-danger delete-product-btn'><i class='fas fa-trash'></i>
             </button></td>";
         
         
-        // product edit view, will be hidden till user click on edit
+        // "Produkt bearbeiten"-Ansicht, wird verborgen bis Benutzer sie aufruft
         echo "</tr>";
         echo "<tr class ='product-edit-form gray-bg' id = 'product-edit-" . $row['id'] . "'><td colspan=10>
             <form method='post' class='form-horizontal' >
             
             <!-- Edit Produkt Form  -->
-            <legend>Edit Produkt</legend>
+            <legend>Produkt bearbeiten</legend>
             
             <!-- Produkt NameText input-->
             <div class='form-group'>
-              <label class='col-md-4 control-label' for='product_name'>Produkt Name</label>  
+              <label class='col-md-4 control-label' for='product_name'>Produktname</label>  
               <div class='col-md-4'>
               <input id='product_name" . $row['id'] . "' name='product_name' type='text' value='" . $row['product_name'] . "' class='form-control input-md' >
                 
               </div>
             </div>
 
-            <!--  Standort & Wasser Verbrauch Row -->
+            <!--  Standort & Wasserverbrauch Row -->
             <div class='row '>
             
               <!-- Produkt Standort Multiple Radios -->
@@ -127,7 +127,7 @@ if ($result->num_rows > 0) {
 
               <!-- Wasser Verbrauch Multiple Radios -->
               <div class='form-group col-md-5'>
-                <label class='col-md-4 control-label' for='water_consumption_edit" . $row['id'] . "'>Wasser Verbrauch</label>
+                <label class='col-md-4 control-label' for='water_consumption_edit" . $row['id'] . "'>Wasserverbrauch</label>
                 <div class='col-md-10'> 
                   <label class='radio-inline' for='water_consumption_0'>
                     <input type='radio' name='water_consumption_edit" . $row['id'] . "' id='water_consumption_mittel' value='1'>
@@ -178,9 +178,9 @@ if ($result->num_rows > 0) {
                 </div>
               </div>
           
-              <!-- Produkt Verwendung Text input-->
+              <!-- Produkt Verwendungszweck Text input-->
               <div class='form-group col-md-5'>
-                <label class='col-md-4 control-label' for='product_usage'>Produkt Verwendung</label>  
+                <label class='col-md-4 control-label' for='product_usage'>Verwendungzweck</label>  
                 <div class='col-md-10'>
                 <input id='product_usage" . $row['id'] . "' name='product_usage' type='text' value='" . $row['product_usage'] . "' class='form-control input-md'>
                   
@@ -194,7 +194,7 @@ if ($result->num_rows > 0) {
 
               <!-- Produkt Prise Text input-->
               <div class='form-group col-md-5'>
-                <label class='col-md-4 control-label' for='product_price'>Produkt Prise</label>  
+                <label class='col-md-4 control-label' for='product_price'>Preis</label>  
                 <div class='col-md-10'>
                 <!-- placeholder Übersetzen-->
                 <input id='product_price" . $row['id'] . "' name='product_price' type='text' value='" . $row['product_price'] . "' placeholder='Bitte die Prise cents mit '.' angebeb' class='form-control input-md' onkeypress='return isNumberKey(event)' >
@@ -212,18 +212,18 @@ if ($result->num_rows > 0) {
 
             </div>
 
-            <!--  Submit & Cancel  Row -->
+            <!--  Übernehmen & Abbrechen  Row -->
             <div class='row'>
 
               <!-- Update Button -->
 
               <div class='col-md-5 '>
-                <input class='btn btn-primary float-right' type='button'  onclick='updateProduct(" . $row['id'] . ")'   value='submit' id='updateproduct'>
+                <input class='btn btn-primary float-right' type='button'  onclick='updateProduct(" . $row['id'] . ")'   value='Übernehmen' id='updateproduct'>
               </div>
 
               <!-- Cancel Button -->
               <div class='col-md-5'>
-                <input class='btn btn-danger' type='button'  onclick='window.location.reload();' name = 'cancel'  value='cancel'>
+                <input class='btn btn-danger' type='button'  onclick='window.location.reload();' name = 'cancel'  value='Abbrechen'>
               </div>
 
             </div>

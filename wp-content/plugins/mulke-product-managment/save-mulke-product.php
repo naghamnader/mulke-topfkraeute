@@ -3,8 +3,8 @@
  * @package MulkeProduktManagmentPlugin
  */
 /*
-Description: php statement to save products -> will be called with ajax request )
-Author: Nagham Nader , ?? 
+Description: PHP-Statement, um Produkt zu speichern -> wird durch AJAX-anfrage aufgerufen
+Author: Christopher Schwarz, Daria Jarzabek
 */
 	include 'db-connection.php';
 	
