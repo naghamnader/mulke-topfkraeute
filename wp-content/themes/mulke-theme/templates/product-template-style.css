@@ -44,3 +44,20 @@ body {
   .prise-col{
       margin-bottom: 25%;
   }
+  .sold-out-overlay{
+    border-radius: 10px;
+    pointer-events: none;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(0,0,0,0.4);
+  }
+  .sold-out-text{
+    font-size: 35px;
+    font-weight: 600;
+    background-color: black;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    z-index: 9999;
+    color: white;
+  }

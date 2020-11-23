@@ -37,7 +37,7 @@
 				</div>
 
 				<div class="col-md-6">
-				Impressum
+				<a href ="http://localhost:8888/mulke-topfkraeute/impressum/">Impressum</a>
 					<!-- <?php 
 						$specia_icon_one	= get_theme_mod('icon_one',''); 
 						$specia_icon_two	= get_theme_mod('icon_two',''); 

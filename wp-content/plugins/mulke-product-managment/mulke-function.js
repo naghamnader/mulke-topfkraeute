@@ -48,7 +48,7 @@
 					name: name,
 					productLocation: productLocation,
 					waterConsumption: waterConsumption,
-                    productImg: productImg,
+          productImg: productImg,
 					productUsage: productUsage,
 					productPrice: productPrice,
 					availableQuantity: availableQuantity,
@@ -79,7 +79,7 @@
 	});
 });
 
-  //check if all user inputs not null and valid to use in db
+  //check if all user inputs not null and valid to use in db , amount null -> over lay ausverkauft
   function checkDataValidation(name, productImg, productUsage, waterConsumption,
     productLocation, availableQuantity, productPrice){
 
@@ -88,7 +88,7 @@
     || typeof(productUsage) != "string" || productUsage === ""
     || typeof(productLocation) != "number" || productLocation === 0
     || typeof(waterConsumption) != "number" || waterConsumption === 0
-    || typeof(availableQuantity) != "number" || availableQuantity === 0
+    || typeof(availableQuantity) != "number" || availableQuantity < 0
     || typeof(productPrice) != "number" || productPrice ===0){
     return false;
     }
@@ -129,10 +129,11 @@ function deleteProduct(productId)
   {
     var x = document.getElementById("product-edit-" + productId);
     if(x.style.display === "none"){
+      // hide all showen forms
       var formsToHide = document.getElementsByClassName("product-edit-form")
       if (formsToHide.length > 0){
         for(var i = 0; i < formsToHide.length; i++){
-          formsToHide[i].style.display = "none"; // depending on what you're doing
+          formsToHide[i].style.display = "none";
        }
        x.style.display = "table-row";
        x.scrollIntoView(false);
@@ -142,18 +143,7 @@ function deleteProduct(productId)
      
         x.style.display = "none";
     }
-  
-  
-   /*  alertify.confirm('Edit product', 'Sure to Edit?', function(){ 
-      jQuery.ajax({
-    url: pluginUrl + '/mulke-product-managment/update-product.php',
-    type:'POST',
-    data:{productId:productId},
-    cache: false
-     });
-     }
-     //cancel function
-    , function(){ return;});   */ 
+
   }
 
   function updateProduct(productId){
@@ -167,16 +157,15 @@ function deleteProduct(productId)
     var availableQuantity = parseInt(jQuery('#available_quantity'+ productId).val())|| 0;
 
 
-    console.log("blabla");
-    console.log(name +" "+ productLocation +" "+ waterConsumption +" "+ productImg +" "+ productUsage +" "+ productPrice +" "+ availableQuantity);
     // validation -> string , int, empty, null ...
-   /*  if(checkDataValidation(name, productImg, productUsage, waterConsumption,
+    if(checkDataValidation(name, productImg, productUsage, waterConsumption,
         productLocation, availableQuantity, productPrice)){
           //send ajax post request to save-mulke-product.php with all product info
             jQuery.ajax({
-          url: pluginUrl + "/mulke-product-managment/save-mulke-product.php",
+          url: pluginUrl + "/mulke-product-managment/update-product.php",
 				type: "POST",
 				data: {
+          id : productId,
 					name: name,
 					productLocation: productLocation,
 					waterConsumption: waterConsumption,
@@ -189,20 +178,20 @@ function deleteProduct(productId)
         cache: false,
 				success: function(dataResult){
           var dataResult = JSON.parse(dataResult);
-          // if success show success alert and reload page
+          // if success show success alert and reload page to update content
 					if(dataResult.statusCode==200){
-            alertify.alert('Add product', 'Produkt wurde erfolgreich hochgeladen :)', function(){ location.reload(false); });
+            alertify.alert('Update product', 'Produkt wurde erfolgreich geupdatet :)', function(){ location.reload(false); });
           }
           
 					else if(dataResult.statusCode==201){
-            alertify.alert('Add product', 'something is not valid!', function(){ location.reload(false); });
+            alertify.alert('Update product', 'something is not valid!', function(){ location.reload(false); });
 					}
 					
 				}
 			});
 
     }else{
-      alertify.alert('Add product', 'something is not valid!');
+      alertify.alert('Update product', 'something is not valid!');
       
-    } */
+    }
   }

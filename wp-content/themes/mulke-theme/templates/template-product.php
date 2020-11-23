@@ -42,8 +42,12 @@ get_header();
                 // every 3 products start a new row
 				if($i % 3 == 1) {
 					echo "<div class='row product-row padding-top-30 padding-bottom-30'>";
-				}
+                }
+ 
                 echo "<div class='headline col-md-4 product-box-parent-col' id ='product-box-" . $row['id'] . "'><div class='product-box-parent'>";
+                if($row['available_quantity'] <= 0){
+                    echo "<div class='sold-out-overlay'> <h1 class='sold-out-text'> Ausverkauft</h1>";
+                }
                 echo "<div class='col-md-12 text-center img-holder'><img class='img-rounded product-img' src='" . $row['product_img'] . "'></div><!-- /.img-holder -->";
                 echo "<h3 class='col-md-10'><strong>" . $row['product_name'] . "</strong></h3>";
                 echo "<p class='col-md-10'><strong>usage:</strong> " . $row['product_usage'] . "</p>";
@@ -53,8 +57,11 @@ get_header();
                 // add to cart button with data : product name, Product prise
 				echo "<div class='col-md-7 cart-btn-holder'>";
 				echo do_shortcode("[wp_cart_button name='" . $row['product_name'] . "' price='" . $row['product_price'] . "']");
-				echo "</div><!-- /.cart-btn-holder -->";
-				echo "</div></div><!-- /.product-box-parent -->";
+                echo "</div><!-- /.cart-btn-holder -->";
+                if($row['available_quantity'] <= 0){
+                    echo "</div>";
+                }
+                echo "</div></div><!-- /.product-box-parent -->";
 
                 // every 3 products end current row
 				if($i % 3 == 0 || $i == $result->num_rows) {
